@@ -1,11 +1,8 @@
 import requests
 import time
-import pprint
 import shutil
 import datetime
 import os
-
-pp = pprint.PrettyPrinter()
 
 response = requests.get("https://api.nasa.gov/planetary/apod?api_key=" + os.environ['nasa_key'])
 
@@ -17,7 +14,6 @@ URL = content.split('"url":')[1][1:-5]
 # Preparing filename
 date = str(datetime.datetime.now().date())
 filename = date + ".jpg"
-
 
 r = requests.get(URL, stream=True)
 
