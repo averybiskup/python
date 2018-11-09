@@ -5,7 +5,6 @@ import datetime
 import os
 
 response = requests.get("https://api.nasa.gov/planetary/apod?api_key=" + os.environ['nasa_key'])
-
 content = str(response.content)
 
 # Getting the correct URL
