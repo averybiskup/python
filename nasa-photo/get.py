@@ -4,6 +4,7 @@ import shutil
 import datetime
 import os
 
+# Getting response with requests lib
 response = requests.get("https://api.nasa.gov/planetary/apod?api_key=" + os.environ['nasa_key'])
 content = str(response.content)
 
@@ -18,9 +19,14 @@ r = requests.get(URL, stream=True)
 
 print("Getting photo from: " + URL)
 
+# Checking for status
 if r.status_code == 200:
+
+    # Opening as f
     with open("images/" + filename, 'wb') as f:
         print("Creating file: " + filename)
+
+        # Decoding
         r.raw.decode_content = True
         shutil.copyfileobj(r.raw, f)
 
