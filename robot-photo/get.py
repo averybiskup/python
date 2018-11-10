@@ -9,19 +9,22 @@ text = input("Name: ")
 
 images = os.listdir("images")
 
-def openIMG(img):
+# Function to open an image, filename with extension, filename without
+def openIMG(img, name):
     img = Image.open('images/' + img)
     img.show()
+    os.system('say Hello! my name is, ' +  name)
 
+# Function to see if file already exists
 def checkFile(text):
     if text in images:
         print('Image already exists.')
-        openIMG(text)
+        openIMG(text, text[0:-4])
         return False
 
     return True
 
-
+# Function to download photo
 def download(file):
     if r.status_code == 200:
         with open('images/' + file, 'wb') as f:
@@ -30,12 +33,13 @@ def download(file):
             r.raw.decode_content = True
             shutil.copyfileobj(r.raw, f)
 
-            openIMG(file)
+            openIMG(file, file[0:-4])
 
     else:
         print('Wasn\'t able to access image.')
 
+# Making sure user actually entered something
 if text != "":
     r = requests.get("https://robohash.org/" + text, stream=True)
     if checkFile(text + ".jpg"):
-        download(getFileName(text))
+        download(text + '.jpg')
