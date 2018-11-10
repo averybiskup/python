@@ -15,9 +15,9 @@ imgURL = content.split('"url":')[1][1:-5]
 date = str(datetime.datetime.now().date())
 filename = date + ".jpg"
 
-r = requests.get(URL, stream=True)
+r = requests.get(imgURL, stream=True)
 
-print("Getting photo from: " + URL)
+print("Getting photo from: " + imgURL)
 
 # Checking for status
 if r.status_code == 200:
