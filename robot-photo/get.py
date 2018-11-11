@@ -5,7 +5,7 @@ from os.path import isfile, join
 from os import listdir
 import os
 
-text = input("Name: ")
+text = (input("Name: ")).lower()
 
 images = os.listdir("images")
 
