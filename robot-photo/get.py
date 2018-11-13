@@ -4,6 +4,18 @@ from PIL import Image
 from os.path import isfile, join
 from os import listdir
 import os
+import sys
+
+def removeImages():
+    for i in os.listdir('images/'):
+        os.remove('images/' + i)
+    print("All images removed from images/")
+    quit(1)
+
+if len(sys.argv) > 1:
+    if sys.argv[1] == "r":
+        removeImages()
+
 
 text = (input("Name: ")).lower()
 
@@ -13,7 +25,7 @@ images = os.listdir("images")
 def openIMG(img, name):
     img = Image.open('images/' + img)
     img.show()
-    os.system('say Hello! my name is, ' +  name)
+    os.system('say Hello! my name is, ' +  name) # This only works on mac I beleive
 
 # Function to see if file already exists
 def checkFile(text):
