@@ -4,6 +4,11 @@ from PIL import Image
 import os
 import sys
 
+print("Enter your name, and we will output your robot.\n")
+
+# Getting input from user
+text = (input("Name: ")).lower()
+
 def removeImages():
     for i in os.listdir('images/'):
         os.remove('images/' + i)
@@ -14,9 +19,6 @@ def removeImages():
 if len(sys.argv) > 1:
     if sys.argv[1] == "r":
         removeImages()
-
-# Getting input from user
-text = (input("Name: ")).lower()
 
 # List of all files in images folder
 images = os.listdir("images")
