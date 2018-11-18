@@ -11,7 +11,7 @@
 # // after the last pass. Return the final result in an array,
 # // with only the door number included in the array if it is open.
 
-
+# For editing each item in list
 def iter(l, n, numDoors):
     increment = n
 
@@ -21,15 +21,19 @@ def iter(l, n, numDoors):
 
     return l
 
-
+# Main function
 def getFinalOpenedDoors(numDoors):
     numDoors += 1
+
+    # Create list of 0s
     l = [0] * numDoors
     final = []
 
+    # Applying to each item in list
     for n in range(1, numDoors):
         l = iter(l, n, numDoors)
 
+    # Finding which indexes were 0 at the end
     for i, j in enumerate(l):
         if j == 1:
             final.append(i)
