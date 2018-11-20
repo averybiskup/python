@@ -15,6 +15,7 @@
 def iter(l, n, numDoors):
     increment = n
 
+    # This loop is for iterating through loop and changing 1s to 0s and vice versa
     while increment < numDoors:
         l[increment] = 1 if l[increment] == 0 else 0
         increment += n
