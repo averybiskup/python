@@ -18,3 +18,9 @@
 # ALWAYS SWITCH
 
 #This program tests this theory with a brute force method
+
+# Steps to program:
+# Inhabit list of two 0s and a 1
+# pick random element
+# run many times
+# log results
