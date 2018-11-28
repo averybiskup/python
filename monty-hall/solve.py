@@ -24,3 +24,16 @@
 # pick random element
 # run many times
 # log results
+
+import random
+
+def createList():
+    list = [0] * 3
+    list[random.randint(0,2)] = 1
+
+    return list
+
+createList()
+# l = [0, 1, 0]
+
+# first = random.choice(l)
