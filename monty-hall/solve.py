@@ -27,6 +27,9 @@
 
 import random
 
+def choose(l):
+    return random.choice(l)
+
 def createList():
     list = [0] * 3
     list[random.randint(0,2)] = 1
