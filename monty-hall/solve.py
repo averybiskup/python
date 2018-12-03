@@ -25,10 +25,16 @@
 # run many times
 # log results
 
-import random
 
-def choose(l):
-    return random.choice(l)
+def openDoor(l, choice):
+    for i, j in enumerate(l):
+        if j == 0 and i != choice:
+            del l[i]
+    return l
+
+
+def choice():
+    return random.randint(0,2)
 
 def createList():
     list = [0] * 3
@@ -36,7 +42,10 @@ def createList():
 
     return list
 
-createList()
+l = createList()
+
+print(openDoor(l, choice()))
+
 # l = [0, 1, 0]
 
 # first = random.choice(l)
