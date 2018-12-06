@@ -25,6 +25,7 @@
 # run many times
 # log results
 
+import random
 
 def openDoor(l, choice):
     for i, j in enumerate(l):
