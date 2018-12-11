@@ -55,5 +55,6 @@ def download(file):
 # Making sure user actually entered something
 if text != "":
     r = requests.get("https://robohash.org/" + text, stream=True)
-    if checkFile(text + ".jpg"):
-        download(text + '.jpg')
+    i = text + ".jpg"
+    if checkFile(i):
+        download(i)
