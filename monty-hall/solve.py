@@ -28,25 +28,30 @@
 import random
 
 def openDoor(l, choice):
-    for i, j in enumerate(l):
-        if j == 0 and i != choice:
-            del l[i]
+    print("CHOICE: ", choice)
+    print(l, " - FIRST")
+    new = list(range(0,3))
+    print(new)
+    del new[choice]
+    print(new)
+    del l[random.choice(new)]
+    # print(new)
+
+
     return l
 
-
+# Returns an int as an index of the array
 def choice():
     return random.randint(0,2)
 
-def createList():
+def createList(i):
     list = [0] * 3
-    list[random.randint(0,2)] = 1
+    list[i] = 1
 
     return list
 
-l = createList()
+choice = choice()
 
-print(openDoor(l, choice()))
+l = createList(choice)
 
-# l = [0, 1, 0]
-
-# first = random.choice(l)
+print(openDoor(l, choice), " - AFTER")
