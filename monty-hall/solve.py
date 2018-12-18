@@ -19,39 +19,35 @@
 
 #This program tests this theory with a brute force method
 
-# Steps to program:
-# Inhabit list of two 0s and a 1
-# pick random element
-# run many times
-# log results
+# NOT PUSHED YET
+def play(withSwap):
 
-import random
+    # Gets indexes for car and guess
+    car = random.randint(0, 2)
+    guess = random.randint(0, 2)
 
-def openDoor(l, choice):
-    print("CHOICE: ", choice)
-    print(l, " - FIRST")
-    new = list(range(0,3))
-    print(new)
-    del new[choice]
-    print(new)
-    del l[random.choice(new)]
-    # print(new)
+    # For solving which door isn't car nor guess
+    temp = [0] * 3
+    temp[guess] = 1
+    temp[car] = 1
+    goat = temp.index(0)
+
+    if withSwap:
+
+        # Chooses to either swap, or stay with the same guess
+        test = [guess, car]
+        guess = random.choice(test)
+
+    return guess == car
 
 
-    return l
-
-# Returns an int as an index of the array
-def choice():
-    return random.randint(0,2)
-
-def createList(i):
-    list = [0] * 3
-    list[i] = 1
-
-    return list
-
-choice = choice()
-
-l = createList(choice)
-
-print(openDoor(l, choice), " - AFTER")
+# Play some amount of times
+correct = 0
+times = 100000
+swap = True
+for i in range(0, times):
+    if play(swap):
+        correct += 1
+print("With Swaps\n" if swap else "Without Swaps\n")
+print("Plays:", times)
+print("Win percentage: %f" % (correct / times))
