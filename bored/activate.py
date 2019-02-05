@@ -1,19 +1,9 @@
 import random
 
-activities = [
-              'Leet Code',
-              'Wash Dishes',
-              'Read for 25 minutes',
-              'Take a walk',
-              'Pull ups',
-              'Audio Book',
-              'Read Medium',
-              'Ride Bike',
-              'Homework',
-              'Push ups',
-              'Duo Lingo',
-              'Elevate',
-             ]
+with open('./list.txt', 'r') as file:
+    data = file.read()
+
+activities = data.split('\n')
 
 def getRandom():
     return random.choice(activities)
