@@ -3,13 +3,13 @@ import time
 import shutil
 import datetime
 import os
+from PIL import Image
 
 # Getting response with requests lib
 response = requests.get("https://api.nasa.gov/planetary/apod?api_key=" + os.environ['nasa_key'])
-content = str(response.content)
 
 # Getting the correct URL
-imgURL = content.split('"url":')[1][1:-5]
+imgURL = response.json()['url']
 
 # Preparing filename
 date = str(datetime.datetime.now().date())
@@ -29,6 +29,8 @@ if r.status_code == 200:
         # Decoding
         r.raw.decode_content = True
         shutil.copyfileobj(r.raw, f)
+        img = Image.open('images/' + filename)
+        img.show()
 
 else:
     print("Wasn't able to get image.")
