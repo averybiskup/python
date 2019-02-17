@@ -15,10 +15,13 @@ def process(key, text):
 
     t = text
 
-    response = naturalLanguageUnderstanding.analyze(text=t,
-    features=Features(
-        entities=EntitiesOptions(emotion=True, sentiment=True, limit=2),
-        keywords=KeywordsOptions(emotion=True, sentiment=True,
-        limit=2))).get_result()
+    try:
+        response = naturalLanguageUnderstanding.analyze(text=t,
+        features=Features(
+            entities=EntitiesOptions(emotion=True, sentiment=True, limit=2),
+            keywords=KeywordsOptions(emotion=True, sentiment=True,
+            limit=2))).get_result()
+    except:
+        return False
 
     return (json.dumps(response, indent=2))
