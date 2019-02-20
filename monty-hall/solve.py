@@ -1,3 +1,5 @@
+import random
+
 def play(withSwap):
 
     # Gets indexes for car and guess
@@ -22,7 +24,7 @@ def play(withSwap):
 # Play some amount of times
 correct = 0
 times = 100000
-swap = True
+swap = False
 for i in range(0, times):
     if play(swap):
         correct += 1
