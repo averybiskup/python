@@ -5,7 +5,7 @@ except:
 import pytesseract
 import os
 
-s = (str(pytesseract.image_to_string(Image.open('test6.jpg'))))
+s = (str(pytesseract.image_to_string(Image.open('images/test6.jpg'))))
 # print(s)
 s = s.split('>', 1)[1].replace('\n', ' ')
 s = s.split('>')
