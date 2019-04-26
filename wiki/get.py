@@ -5,10 +5,6 @@ import json
 pp = pprint.PrettyPrinter(indent=4)
 
 url = "https://en.wikipedia.org/api/rest_v1/page/related/"
-#
-# r = requests.get(url).json()
-# pages = r['pages']
-# pp.pprint(pages[0])
 
 class Article:
 
