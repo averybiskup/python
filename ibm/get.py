@@ -1,4 +1,5 @@
 import json
+import os
 from watson_developer_cloud import NaturalLanguageUnderstandingV1
 from watson_developer_cloud.natural_language_understanding_v1 \
     import Features, EntitiesOptions, KeywordsOptions
@@ -24,4 +25,7 @@ def process(key, text):
     except:
         return False
 
+    print(json.dumps(response, indent=2))
     return (json.dumps(response, indent=2))
+
+process(os.environ['iam_apikey'], 'IBM watson is an actual piece of shit. I hate it a lot.')
