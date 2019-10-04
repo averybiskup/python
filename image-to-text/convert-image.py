@@ -11,29 +11,31 @@ except:
 # First: Image
 # Second: Filename (optional)
 
-image = sys.argv[1]
 
-name = image.split('/')[-1].split('.')[0]
+def convert(image, file):
 
-file = sys.argv[2] + '.txt' if len(sys.argv) >= 3 else name + '.txt'
+    file = file + '.txt'
 
-try:
-    with open('text/' + file, 'r') as f:
-        print('text/' + file + ' : Already Exists')
-        exit(1)
-except FileNotFoundError:
     for x in range (0,15):
         b = "||" * x
         print (b, end="\r")
         time.sleep(0.1)
     print('\n')
 
-text = str(pytesseract.image_to_string(Image.open(image)))
+    text = str(pytesseract.image_to_string(Image.open(image)))
 
-with open(file, 'w+') as f:
-    f.write(text)
-    if os.path.isdir("/text"):
-        os.rename(file, 'text/' + file)
-        print('File Created: ' + 'text/' + file)
-    else:
-        print('File Created: ' + file)
+    with open(file, 'w+') as f:
+        f.write(text)
+        if os.path.isdir("/text"):
+            os.rename(file, 'text/' + file)
+            print('File Created: ' + 'text/' + file)
+        else:
+            print('File Created: ' + file)
+
+try:
+    if len(sys.argv) >= 2:
+        image = sys.argv[1]
+        save_as = sys.argv[2]
+        convert(image, save_as)
+except:
+    print('Invalid Arguments [file, save_as]')
