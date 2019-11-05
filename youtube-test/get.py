@@ -1,5 +1,6 @@
 import json
 import requests
+import webbrowser
 
 secret = json.load(open('key.json', 'r'))
 key = secret['api_key']
@@ -35,16 +36,34 @@ def getPlaylistId(channel, key):
 
 # print(getPlaylistId('LinusTechTips', key))
 
-def getLastVideo(channels, key):
+def seen_check(id):
+    with open('seen.txt', 'r') as file:
+        l = file.read().split('\n')
+    return id not in l
+
+def getLastVideo(channels, key, num_videos):
     video_id_dict = {}
+    video_id_list = []
+    up_to_date = True
     for channel in channels:
-        playlist_url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=3&playlistId={}&key={}'.format(getPlaylistId(channel, key), key)
+        playlist_url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults={}&playlistId={}&key={}'.format(num_videos, getPlaylistId(channel, key), key)
         r = requests.get(playlist_url)
         for video in r.json()['items']:
             videoId = video['snippet']['resourceId']['videoId']
             date = video['snippet']['publishedAt']
             video_id_dict[videoId] = date
+            video_id_list.append(videoId)
 
-    print(video_id_dict)
+            if seen_check(videoId):
+                webbrowser.open('http://127.0.0.1:5000/' + videoId)
+                with open('seen.txt', 'a+') as seen:
+                    seen.write(videoId + "\n")
+                    up_to_date = False
 
-getLastVideo(['1Veritasium', 'LinusTechTips'], key)
+    if up_to_date:
+        print('You\'re all up to date!')
+
+with open('channels.txt', 'r') as channels:
+    l = channels.read().split('\n')[0:-1]
+
+getLastVideo(l, key, 1)
