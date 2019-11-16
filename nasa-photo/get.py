@@ -3,10 +3,15 @@ import time
 import shutil
 import datetime
 import os
+import json
 from PIL import Image
+from set import set_image
+
+key = json.load(open("nasa_token.json"))
+NASA_KEY = key['nasa_key']
 
 # Getting response with requests lib
-response = requests.get("https://api.nasa.gov/planetary/apod?api_key=" + os.environ['nasa_key'])
+response = requests.get("https://api.nasa.gov/planetary/apod?api_key=" + NASA_KEY)
 
 # Getting the correct URL
 imgURL = response.json()['url']
@@ -30,7 +35,8 @@ if r.status_code == 200:
         r.raw.decode_content = True
         shutil.copyfileobj(r.raw, f)
         img = Image.open('images/' + filename)
-        img.show()
+        # img.show()
+        set_image(filename)
 
 else:
     print("Wasn't able to get image.")
