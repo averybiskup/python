@@ -9,7 +9,9 @@ def request():
     q = r.json()
     try:
         text = q['contents']['quotes'][0]
-        return '"' + text['quote'] + '"\n\n\t- ' + text['author']
+        send = '"' + text['quote'] + '"\n\n\n\n - ' + text['author']
+        print(send)
+        return send
     except:
         msg = q['error']['message']
         return msg
