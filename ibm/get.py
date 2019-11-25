@@ -28,4 +28,4 @@ def process(key, text):
     print(json.dumps(response, indent=2))
     return (json.dumps(response, indent=2))
 
-process(os.environ['iam_apikey'], 'IBM watson is an actual piece of shit. I hate it a lot.')
+# process(os.environ['iam_apikey'], 'IBM watson is an actual piece of shit. I hate it a lot.')
