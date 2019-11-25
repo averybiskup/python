@@ -41,7 +41,7 @@ def seen_check(id):
         l = file.read().split('\n')
     return id not in l
 
-def getLastVideo(channels, key, num_videos):
+def getLastVideo(channels, key, num_videos, new):
     video_id_dict = {}
     video_id_list = []
     up_to_date = True
@@ -53,9 +53,10 @@ def getLastVideo(channels, key, num_videos):
             date = video['snippet']['publishedAt']
             video_id_dict[videoId] = date
             video_id_list.append(videoId)
-
-            if seen_check(videoId):
-                webbrowser.open('http://127.0.0.1:5000/' + videoId)
+            print(videoId)
+            if seen_check(videoId) or not new:
+                # webbrowser.open('http://127.0.0.1:5000/' + videoId)
+                webbrowser.open('https://www.youtube.com/watch?v=' + videoId)
                 with open('seen.txt', 'a+') as seen:
                     seen.write(videoId + "\n")
                     up_to_date = False
@@ -66,4 +67,4 @@ def getLastVideo(channels, key, num_videos):
 with open('channels.txt', 'r') as channels:
     l = channels.read().split('\n')[0:-1]
 
-getLastVideo(l, key, 1)
+getLastVideo(l, key, 1, False)
