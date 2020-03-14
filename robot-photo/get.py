@@ -26,7 +26,7 @@ images = os.listdir("images")
 # Function to open an image, filename with extension, filename without
 def openIMG(img, name):
     img = Image.open('images/' + img)
-    img.show()
+    # img.show()
     os.system('say Hello! my name is, ' + name) # This only works on mac I beleive
 
 # Function to see if file already exists

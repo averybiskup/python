@@ -67,4 +67,4 @@ def getLastVideo(channels, key, num_videos, new):
 with open('channels.txt', 'r') as channels:
     l = channels.read().split('\n')[0:-1]
 
-getLastVideo(l, key, 1, False)
+getLastVideo(l, key, 1, True)
