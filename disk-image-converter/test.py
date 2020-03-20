@@ -1,3 +1,6 @@
+# THIS NO LONGER WORKS BECAUSE OF HOW DISCORD
+# SAVES IMAGES
+
 import psutil
 from PIL import Image
 import os
@@ -34,6 +37,7 @@ for i in range(AMOUNT):
 
 
 # FILE_NAME = input('File: ')
+print(recent)
 
 
 for FILE_NAME in recent:
