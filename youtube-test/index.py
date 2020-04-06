@@ -1,13 +1,11 @@
-from flask import Flask, request, render_template
-
-import flask
+from flask import *
+import webbrowser
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # return "Hello"
-    return render_template('index.html', videoId='q3kSW633bsk')
+    return render_template('index.html', videoId='YFeqYRuRwtY')
 
 @app.route('/<videoId>')
 def video(videoId):
