@@ -4,11 +4,81 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>Test</title>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
 </head>
-<body>
-	<div>{{ videoId }}</div>
-	<iframe src="https://www.youtube.com/embed/{{ videoId }}" frameborder="0" allowfullscreen></iframe>
+<body id='test'>
+
+	<iframe id="vid1" class="vid1" src="https://www.youtube.com/embed/{{ videoId }}?modestbranding=1&autohide=1&showinfo=0&controls=0&autoplay=1&rel=0" frameborder="0" allowfullscreen width=screen.width height=></iframe>
+	<iframe id="vid2" class="vid2" src="https://www.youtube.com/embed/{{ videoId }}?modestbranding=1&autohide=1&showinfo=0&controls=0&autoplay=1&mute=1&start=20" frameborder="0" allowfullscreen width=screen.width height=></iframe>
+	<iframe id="vid3" class="vid3" src="https://www.youtube.com/embed/{{ videoId }}?modestbranding=1&autohide=1&showinfo=0&controls=0&autoplay=1&mute=1&start=60" frameborder="0" allowfullscreen width=screen.width height=></iframe>
+	<iframe id="vid4" class="vid4" src="https://www.youtube.com/embed/{{ videoId }}?modestbranding=1&autohide=1&showinfo=0&controls=0&autoplay=1&mute=1&start=70" frameborder="0" allowfullscreen width=screen.width height=></iframe>
+	<!-- <div1><div2>{{ videoId }}</div2></div1> -->
+	<div1 id='test1'></div1>
+	<script>
+		// var elem = document.getElementById("test");
+		// elem.requestFullscreen();
+		setTimeout(
+			function() {
+				document.getElementById('test1').style.display = "flex"
+				document.getElementById('test1').style.cursor = "none"
+				var elem = document.getElementById("test");
+				elem.requestFullscreen();
+				document.getElementById('vid1').style.opacity = '100%'
+				document.getElementById('vid2').style.opacity = '100%'
+				document.getElementById('vid3').style.opacity = '100%'
+				document.getElementById('vid4').style.opacity = '100%'
+			},
+			6000
+		)
+
+		setInterval(
+			function(){
+				document.getElementById('vid2').style.opacity = '0%'
+				document.getElementById('vid2').src = 'https://www.youtube.com/embed/{{ videoId }}?modestbranding=1&autohide=1&showinfo=0&controls=0&autoplay=1&mute=1&start=40'
+				setTimeout(
+					function(){
+						document.getElementById('vid2').style.opacity = '100%'
+					}, 7000
+				)
+			}, 25000
+		)
+
+		setInterval(
+			function(){
+				document.getElementById('vid3').style.opacity = '0%'
+				document.getElementById('vid3').src = 'https://www.youtube.com/embed/{{ videoId }}?modestbranding=1&autohide=1&showinfo=0&controls=0&autoplay=1&mute=1&start=25'
+				setTimeout(
+					function(){
+						document.getElementById('vid3').style.opacity = '100%'
+					}, 7000
+				)
+			}, 40000
+		)
+
+		setInterval(
+			function(){
+				document.getElementById('vid4').style.opacity = '0%'
+				document.getElementById('vid4').src = 'https://www.youtube.com/embed/{{ videoId }}?modestbranding=1&autohide=1&showinfo=0&controls=0&autoplay=1&mute=1&start=10'
+				setTimeout(
+					function(){
+						document.getElementById('vid4').style.opacity = '100%'
+					}, 7000
+				)
+			}, 60000
+		)
+
+		// num = 0
+		// setTimeout(
+		// 	function(){
+		// 		document.getElementById('vid1').style.opacity = '100%'
+		// 		document.getElementById('vid2').style.opacity = '100%'
+		// 		document.getElementById('vid3').style.opacity = '100%'
+		// 		document.getElementById('vid4').style.opacity = '100%'
+		// 		num += 1
+		// }, 500);
+		// document.getElementById('test').style.cursor = 'none';
+	</script>
 
 </body>
 </html>
