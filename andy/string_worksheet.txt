@@ -1,0 +1,40 @@
+1.
+	a. It should print hat, then print cat.
+	b. No. It threw an error.
+	c. It should replace the first character in the string with 'c'. But actually throws an error.
+	d. That means strings can be changed.
+
+2.
+	c = input('Enter character: ')
+
+	vowels = ['a', 'e', 'i', 'o', 'u', 'y']
+	alph = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+	if c in vowels:
+		print('This is a vowel.')
+	elif c in alph:
+		print('This is not a vowel.')
+	elif c.isdecimal():
+		print('This is a digit.')
+	else:
+		print('This is not a vowel, letter, or a number.')
+
+
+3.
+	word = input('Word: ')
+	f = open('test_search.txt', 'r')
+
+	lines = f.read().split('\n')
+
+	line_count = 0
+	count = 0
+	for i in lines:
+		if word in i.split(' '):
+			for w in i.split(' '):
+				if w == word:
+					count += 1
+			print(word)
+			line_count += 1
+
+	print('Times found: {}'.format(count))
+	print('Lines: {}'.format(line_count))
