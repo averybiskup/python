@@ -1,0 +1,47 @@
+''" Uses a function to compute the new balance of a
+specified investment with 5% interest after a period
+of 10 years. Then uses the same function to show the
+new balance of the same initial investment at other
+interest rates and time periods
+
+def accrue_interest(cur_balance, rate, years):
+
+Returns the new balance when cur_balance is invested for
+
+specified number of years at specified interest rate.
+
+for elapsed_years in range(years):  # For specified number of years..
+cur_balance += cur_balance * rate # Add interest to the balance
+
+return cur_balance
+# Beginning of main part of program
+init_balance = float(input("Please enter initial balance: $"))
+
+# Compile interest for 10 years at 5%
+new_balance = accrue_interest(init_balance, 0.05, 10)
+
+# Output the result
+
+print("After 10 years at 5%, your balance will be: $", format(new_balance, '.2f')
+
+# Compile interest for 10 years at 1%
+new_balance = accrue_interest(init_balance, 0.01, 10)
+print("After 10 years at 1%, your balance will be: $", format(new_balance, '.2f')
+
+# Output the result of compiling interest for 7 years at 1%
+print("After 7 years at 1%, your balance will be: $",
+format (accrue_interest(init_balance, 0.01, 7), '.2f'))
+
+# Sample Output:
+
+Please enter initial balance: $ 100
+
+After 10 years at 5%, your balance will be: $ 162.89
+After 10 years at 1%, your balance will be: $ 110.46
+After 7 years at 1%, your balance will be: $ 107.21
+
+Please enter initial balance: $ 975.50
+
+After 10 years at 5%, your balance will be: $ 1588.99
+After 10 years at 1%, your balance will be: $ 1077.56
+After 7 years at 1%, your balance will be: $ 1045.87

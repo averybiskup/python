@@ -28,16 +28,55 @@ class Article:
 
 class Pages:
 
-    def __init__(self):
+    def __init__(self, input, amount=5):
         super()
         self.pages = {}
+        self.num_pages = 0
+        self.input = input
+        self.amount = amount
+
+        self.request()
+
+
+    def request(self):
+        r = requests.get(url + self.input)
+
+        if r.status_code != 200:
+            self.no_articles(self.input)
+        r = r.json()
+
+        pages = r['pages']
+
+        n = 0
+        for i in pages:
+            n += 1
+            self.add_article(Article(i['normalizedtitle'], i['content_urls']['desktop']['page'], i['extract']))
+            self.num_pages += 1
+
+            if n >= self.amount:
+                break
 
     def add_article(self, article):
         self.pages[article.get_title()] = article
 
+    def no_articles(self, name):
+        print('There are no such articles.')
+        exit(0)
+
     def list_articles(self):
-        for i in self.article_list:
-            print(i)
+        l = []
+        for article_name in self.pages:
+            l.append(article_name)
+        return l
+
+    def print_list(self):
+        n = 1
+        for i in self.list_articles():
+            print('[{}]'.format(n), i)
+            n += 1
+
+    def get_first_article(self):
+        self.get_article(self.list_articles()[0])
 
     def get_article(self, name):
         try:
@@ -46,23 +85,13 @@ class Pages:
         except:
             print("Article Not Found")
 
-    def article_list(self):
-        l = []
-        for key, val in self.pages.items():
-            l.append(key)
-        return l
+    def choose_article(self):
+        self.print_list()
+        num = int(input(': ')) - 1
+        self.get_article(self.list_articles()[num])
 
-p = Pages()
+item = input('Search: ')
 
+p = Pages(item, 5)
 
-def get_pages(input):
-    r = requests.get(url + input).json()
-    pages = r['pages']
-
-    for i in pages:
-        article = Article(i['normalizedtitle'], i['content_urls']['desktop']['page'], i['extract'])
-        p.add_article(article)
-
-get_pages('Elephant')
-
-print(p.article_list()[0])
+p.choose_article()
