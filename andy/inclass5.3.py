@@ -1,6 +1,6 @@
 """
-    getUnique takes only unique numbers from the user, and puts them in a list.
-    Then this function returns a list of the numbers, and the max and min numbers of the list.
+    This function gets the unique values of the numbers inputted from users.
+    It also prints the max, and min of the numbers.
 """
 
 def getUniques():
