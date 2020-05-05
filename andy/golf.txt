@@ -1,0 +1,3 @@
+Name: jack | Score: 4000
+Name: sam | Score: 40
+Name: josh | Score: 203
