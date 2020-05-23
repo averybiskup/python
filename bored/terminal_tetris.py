@@ -25,10 +25,14 @@ def square(x, y, w, h, maxw=rows, maxh=columns):
             points[(i + x, l + y)] = True
     return points
 
+def add_shapes(s):
+    s3 = {}
+    for i in s:
+        s3.update(i)
+    return s3
 
 def matrix(shape):
     os.system('clear')
-    l = []
     for i in range(int(rows) - 1):
         for n in range(int(columns)):
             if (n, i) in shape:
@@ -36,6 +40,4 @@ def matrix(shape):
             else:
                 print(' ', end='')
 
-for i in range(0, 50, 1):
-    matrix(lin(i/10, 0))
-    time.sleep(1)
+s = [lin(i/10, 0) for i in range(0, 100, 1)]
