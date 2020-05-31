@@ -19,6 +19,7 @@ fc = {
     'cyan': 36,
     'white': 37
 }
+
 bc = {
     'black': 40,
     'red': 41,
