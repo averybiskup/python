@@ -21,7 +21,7 @@ fc = {
  }
 
 
-def p(text, style, fc, bgc):
+def p(text, style='slant', fc='white', bgc='black'):
     
     f= Figlet(font=style)
     str = '\33[1;{};{}m{}\33[1;37;40m'.format(fc, bgc, f.renderText(text))
