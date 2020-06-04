@@ -34,10 +34,10 @@ while True:
     try:
         localtime = time.asctime( time.localtime(time.time()) )
         time_split = localtime.split(' ')
-        t = time_split[3].replace(':', '     -   ')
+        t = time_split[4].replace(':', '   -   ')
         str = '{}      {}       {}\n{}'.format(time_split[0],
                                                time_split[1],
-                                               time_split[2], t)
+                                               time_split[3], t)
 
         time.sleep(1)
         os.system('clear')
