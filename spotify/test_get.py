@@ -10,6 +10,8 @@ def get_artist_info(name):
     items = results['artists']['items']
     if len(items) > 0:
         return items
+    else:
+        return {}
 
 # Function for getting the background image of the artist
 def get_background(name):
@@ -45,7 +47,7 @@ def get_followers(name):
     items = get_artist_info(name)
 
     try:
-           if len(items) > 0:
+        if len(items) > 0:
             artist = items[0]
 
             return artist['followers']['total']
@@ -55,5 +57,23 @@ def get_followers(name):
     except:
         return 'Artist Not Found'
 
+# Function for getting the uri of the artist (good for getting more info about them)
+def get_uri(name):
+    items = get_artist_info(name)
 
-print(get_followers('Yung Lean'))
+    try:
+        if len(items) > 0:
+            artist = items[0]
+
+            return artist['uri']
+        else:
+            return 'Something Went Wrong'
+    except:
+        return 'Artist Not Found'
+
+get_artist_info('Yung Lean')
+#print(get_followers('Yung Lean'))
+
+
+if __name__ == '__main__':
+    get_uri('Yung Lean')
