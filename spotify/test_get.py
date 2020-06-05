@@ -71,9 +71,17 @@ def get_uri(name):
     except:
         return 'Artist Not Found'
 
-get_artist_info('Yung Lean')
-#print(get_followers('Yung Lean'))
+def get_popularity(name):
+    items = get_artist_info(name)
 
+    try:
+        if len(items) > 0:
+            artist = items[0]
+            return artist['popularity']
+        else:
+            return 'Something Went Wrong'
+    except:
+        return 'Artist Not Found'
 
 if __name__ == '__main__':
     get_uri('Yung Lean')
