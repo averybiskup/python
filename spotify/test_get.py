@@ -83,5 +83,32 @@ def get_popularity(name):
     except:
         return 'Artist Not Found'
 
+def get_albums(name):
+    uri = get_uri(name)
+
+    spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
+
+    results = spotify.artist_albums(uri, album_type='album')
+
+    a = results['items']
+    albums = []
+    for i in a:
+        new_album = {}
+        new_album['name'] = i['name']
+        new_album['num_tracks'] = i['total_tracks']
+        new_album['cover'] = i['images'][0]['url']
+        new_album['artist'] = i['artists'][0]['name']
+        new_album['id'] = i['id']
+        albums.append(new_album)
+    
+    print(albums)
+    return albums
+
+#def get_album_tracks(album):
+    
+
+
+get_albums('Yung Lean')
+
 if __name__ == '__main__':
     get_uri('Yung Lean')
