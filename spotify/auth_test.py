@@ -9,16 +9,16 @@ pp = pprint.PrettyPrinter(indent=4)
 
 username = 'Avery Biskup'
 scope = 'user-read-playback-state'
+playlist_scope = 'playlist-read-private'
 
 token = util.prompt_for_user_token(username,
-                           scope,
+                           playlist_scope,
                            client_id=os.environ['SPOTIPY_CLIENT_ID'],
                            client_secret=os.environ['SPOTIPY_CLIENT_SECRET'],
                            redirect_uri=os.environ['SPOTIPY_REDIRECT_URI'])
                             
 s = spotipy.Spotify(auth=token)
 
-#pp.pprint(s.current_playback())
 
 def current():
     os.system('clear')
@@ -63,5 +63,15 @@ def current():
     print(f.p('{} {}%'.format(volume_bar, volume), None, 'red'))
     print(f.p('{} {}'.format(progress_bar, time), None, 'cyan'))
 
+def get_my_user_id():
+    return s.me()['id']
+
+def get_pl():
+    p = s.user_playlists(get_my_user_id())
+    print(p)
+
+
 if token:
-    current()
+    print('Token Accepted')
+    get_pl()
+    #print(get_my_user_id())
