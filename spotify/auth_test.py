@@ -23,6 +23,11 @@ s = spotipy.Spotify(auth=token)
 def current():
     os.system('clear')
     p = s.current_playback()
+
+    if not p:
+        print('No song playing')
+        return 0
+
     device = p['device']['name']
     volume = p['device']['volume_percent']
     volume_percentage = math.floor(int(volume)/2)
