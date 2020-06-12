@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 import spotipy
 import spotipy.util as util
@@ -13,9 +15,6 @@ with open('secret.json') as s:
     SPOTIPY_CLIENT_SECRET = data['SPOTIPY_CLIENT_SECRET']
     SPOTIPY_REDIRECT_URI = data['SPOTIPY_REDIRECT_URI']
 
-
-
-
 pp = pprint.PrettyPrinter(indent=4)
 
 username = 'Avery Biskup'
@@ -23,10 +22,10 @@ scope = 'user-read-playback-state'
 playlist_scope = 'playlist-read-private'
 
 token = util.prompt_for_user_token(username,
-                           playlist_scope,
-                           client_id=SPOTIPY_CLIENT_ID,
-                           client_secret=SPOTIPY_CLIENT_SECRET,
-                           redirect_uri=SPOTIPY_REDIRECT_URI)
+                                   playlist_scope,
+                                   client_id=SPOTIPY_CLIENT_ID,
+                                   client_secret=SPOTIPY_CLIENT_SECRET,
+                                   redirect_uri=SPOTIPY_REDIRECT_URI)
 
 s = spotipy.Spotify(auth=token)
 
@@ -86,17 +85,23 @@ class Playlist:
         return self.playlist['name']
 
     def num_tracks(self):
-        return self.playlist['tracks']['total']
+        return int(self.playlist['tracks']['total'])
 
     def track_list(self):
         tracks = self.playlist['tracks']
         track_objs = [i[1]['track'] for i in enumerate(tracks['items'])]
         return track_objs
 
-    def popularity(self):
-        total = 0
-        pp.pprint(track_list()[0])
+    def obscurity(self):
+        p = [i['popularity'] for i in self.track_list()]
 
+        total_p = sum(p)
+        possible_p = self.num_tracks() * 100
+
+        if self.num_tracks() == 0:
+            return 0
+
+        return math.floor((1 - (total_p / possible_p)) * 100)
 
 def get_my_user_id():
     return s.me()['id']
@@ -107,7 +112,12 @@ def my_pl_ids():
     
     return pl_ids
 
+flag = sys.argv[-1]
+
 if token:
-    print('Token Accepted\n')
-    p = Playlist(my_pl_ids()[0], token)
-    print(p.popularity())
+    if flag == 'c':
+        current()
+
+
+
+
