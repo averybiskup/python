@@ -46,10 +46,13 @@ while current < len(questions):
     for n, a in a_obj.items():
         print('[' + str(n) + ']', a)
 
-    user_a = int(input('>'))
+    user_a = input('>')
 
     os.system('clear')
-    if a_obj[user_a] == correct:
+    if user_a == 'q':
+        print(p('Bai', 'r', 'cyan'))
+        break
+    elif a_obj[int(user_a)] == correct:
         print(p('nice', 'r', 'green'))
     else:
         print(p('not nice', 'r', 'red'))
