@@ -5,6 +5,17 @@ import os
 import pprint
 import math
 import figlet_wrapper as f
+import json
+
+with open('secret.json') as s:
+    data = json.load(s)
+    SPOTIPY_CLIENT_ID = data['SPOTIPY_CLIENT_ID']
+    SPOTIPY_CLIENT_SECRET = data['SPOTIPY_CLIENT_SECRET']
+    SPOTIPY_REDIRECT_URI = data['SPOTIPY_REDIRECT_URI']
+
+
+
+
 pp = pprint.PrettyPrinter(indent=4)
 
 username = 'Avery Biskup'
@@ -13,13 +24,13 @@ playlist_scope = 'playlist-read-private'
 
 token = util.prompt_for_user_token(username,
                            playlist_scope,
-                           client_id=os.environ['SPOTIPY_CLIENT_ID'],
-                           client_secret=os.environ['SPOTIPY_CLIENT_SECRET'],
-                           redirect_uri=os.environ['SPOTIPY_REDIRECT_URI'])
-                            
+                           client_id=SPOTIPY_CLIENT_ID,
+                           client_secret=SPOTIPY_CLIENT_SECRET,
+                           redirect_uri=SPOTIPY_REDIRECT_URI)
+
 s = spotipy.Spotify(auth=token)
 
-
+# This requires scope = 'user-read-playback-state'
 def current():
     os.system('clear')
     p = s.current_playback()
@@ -63,15 +74,40 @@ def current():
     print(f.p('{} {}%'.format(volume_bar, volume), None, 'red'))
     print(f.p('{} {}'.format(progress_bar, time), None, 'cyan'))
 
+class Playlist:
+
+    def __init__(self, id, token):
+        self.id = id
+        self.token = token
+        self.s = spotipy.Spotify(auth=token)
+        self.playlist = s.playlist(id)
+    
+    def name(self):
+        return self.playlist['name']
+
+    def num_tracks(self):
+        return self.playlist['tracks']['total']
+
+    def track_list(self):
+        tracks = self.playlist['tracks']
+        track_objs = [i[1]['track'] for i in enumerate(tracks['items'])]
+        return track_objs
+
+    def popularity(self):
+        total = 0
+        pp.pprint(track_list()[0])
+
+
 def get_my_user_id():
     return s.me()['id']
 
-def get_pl():
+def my_pl_ids():
     p = s.user_playlists(get_my_user_id())
-    print(p)
-
+    pl_ids = [i['id'] for i in p['items']]
+    
+    return pl_ids
 
 if token:
-    print('Token Accepted')
-    get_pl()
-    #print(get_my_user_id())
+    print('Token Accepted\n')
+    p = Playlist(my_pl_ids()[0], token)
+    print(p.popularity())
