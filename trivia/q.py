@@ -60,7 +60,7 @@ while current < len(questions):
 
     time.sleep(1)
 
-    current += 2
+    current += 1
 
 print('Game Over')
 
