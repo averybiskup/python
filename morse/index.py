@@ -3,6 +3,8 @@ import sys
 import time
 import cursor
 
+#TEST
+
 table = {
     'a': '.-',
     'b': '-...',

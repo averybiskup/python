@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import sys
 import spotipy
 import spotipy.util as util
@@ -8,24 +6,25 @@ import pprint
 import math
 import figlet_wrapper as f
 import json
-
-with open('secret.json') as s:
-    data = json.load(s)
-    SPOTIPY_CLIENT_ID = data['SPOTIPY_CLIENT_ID']
-    SPOTIPY_CLIENT_SECRET = data['SPOTIPY_CLIENT_SECRET']
-    SPOTIPY_REDIRECT_URI = data['SPOTIPY_REDIRECT_URI']
-
+import sys
 pp = pprint.PrettyPrinter(indent=4)
+
+
+with open('secret.json') as secret:
+    j = json.load(secret)
+    SPOTIPY_CLIENT_ID = j['SPOTIPY_CLIENT_ID']
+    SPOTIPY_CLIENT_SECRET = j['SPOTIPY_CLIENT_SECRET']
+    SPOTIPY_REDIRECT_URI = j['SPOTIPY_REDIRECT_URI']
 
 username = 'Avery Biskup'
 scope = 'user-read-playback-state'
 playlist_scope = 'playlist-read-private'
 
 token = util.prompt_for_user_token(username,
-                                   playlist_scope,
-                                   client_id=SPOTIPY_CLIENT_ID,
-                                   client_secret=SPOTIPY_CLIENT_SECRET,
-                                   redirect_uri=SPOTIPY_REDIRECT_URI)
+                           playlist_scope,
+                           SPOTIPY_CLIENT_ID,
+                           SPOTIPY_CLIENT_SECRET,
+                           SPOTIPY_REDIRECT_URI)
 
 s = spotipy.Spotify(auth=token)
 
@@ -73,6 +72,9 @@ def current():
     print(f.p('{} {}%'.format(volume_bar, volume), None, 'red'))
     print(f.p('{} {}'.format(progress_bar, time), None, 'cyan'))
 
+
+
+
 class Playlist:
 
     def __init__(self, id, token):
@@ -85,23 +87,17 @@ class Playlist:
         return self.playlist['name']
 
     def num_tracks(self):
-        return int(self.playlist['tracks']['total'])
+        return self.playlist['tracks']['total']
 
     def track_list(self):
         tracks = self.playlist['tracks']
         track_objs = [i[1]['track'] for i in enumerate(tracks['items'])]
         return track_objs
 
-    def obscurity(self):
-        p = [i['popularity'] for i in self.track_list()]
+    def popularity(self):
+        total = 0
+        pp.pprint(self.track_list()[0])
 
-        total_p = sum(p)
-        possible_p = self.num_tracks() * 100
-
-        if self.num_tracks() == 0:
-            return 0
-
-        return math.floor((1 - (total_p / possible_p)) * 100)
 
 def get_my_user_id():
     return s.me()['id']
@@ -112,11 +108,16 @@ def my_pl_ids():
     
     return pl_ids
 
-flag = sys.argv[-1]
 
-if token:
-    if flag == 'c':
+if len(sys.argv) > 1:
+    if sys.argv[1] == 'c':
         current()
+else:
+    if token:
+        print('Token Accepted\n')
+        p = Playlist(my_pl_ids()[0], token)
+        print(p.popularity())   
+
 
 
 
