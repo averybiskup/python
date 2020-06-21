@@ -96,8 +96,12 @@ class Playlist:
 
     def popularity(self):
         total = 0
-        pp.pprint(self.track_list()[0])
+        for track in self.track_list():
+            if track['name'] != 'None':
 
+                total += track['popularity']
+
+        return round(total / (self.num_tracks() * 100), 2)
 
 def get_my_user_id():
     return s.me()['id']
@@ -115,7 +119,7 @@ if len(sys.argv) > 1:
 else:
     if token:
         print('Token Accepted\n')
-        p = Playlist(my_pl_ids()[0], token)
+        p = Playlist(my_pl_ids()[2], token)
         print(p.popularity())   
 
 
