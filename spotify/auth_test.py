@@ -9,7 +9,7 @@ import json
 import sys
 pp = pprint.PrettyPrinter(indent=4)
 
-
+# get api info from json file
 with open('secret.json') as secret:
     j = json.load(secret)
     SPOTIPY_CLIENT_ID = j['SPOTIPY_CLIENT_ID']
@@ -21,10 +21,10 @@ scope = 'user-read-playback-state'
 playlist_scope = 'playlist-read-private'
 
 token = util.prompt_for_user_token(username,
-                           playlist_scope,
-                           SPOTIPY_CLIENT_ID,
-                           SPOTIPY_CLIENT_SECRET,
-                           SPOTIPY_REDIRECT_URI)
+                                   playlist_scope,
+                                   SPOTIPY_CLIENT_ID,
+                                   SPOTIPY_CLIENT_SECRET,
+                                   SPOTIPY_REDIRECT_URI)
 
 s = spotipy.Spotify(auth=token)
 
