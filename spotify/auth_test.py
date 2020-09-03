@@ -18,8 +18,8 @@ with open('secret.json') as secret:
 
 username = 'Avery Biskup'
 scope = 'user-read-playback-state'
-playlist_scope = 'playlist-read-private'
-
+#playlist_scope = 'playlist-read-private'
+playlist_scope = 'user-library-read'
 token = util.prompt_for_user_token(username,
                                    playlist_scope,
                                    SPOTIPY_CLIENT_ID,
@@ -112,17 +112,21 @@ def my_pl_ids():
     
     return pl_ids
 
+def get_albums():
+    url_list = []
+    for item in s.current_user_saved_albums(50)['items']:
+        url_list.append(item['album']['images'][0]['url'])
 
-if len(sys.argv) > 1:
-    if sys.argv[1] == 'c':
-        current()
-else:
-    if token:
-        print('Token Accepted\n')
-        p = Playlist(my_pl_ids()[2], token)
-        print(p.popularity())   
+    return url_list
 
+if __name__ == '__main__':
 
-
+    if len(sys.argv) > 1:
+        if sys.argv[1] == 'c':
+            current()
+    else:
+        if token:
+            print('Token Accepted\n')
+            get_albums()
 
 
