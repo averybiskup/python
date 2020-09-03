@@ -18,10 +18,12 @@ with open('secret.json') as secret:
 
 username = 'Avery Biskup'
 scope = 'user-read-playback-state'
-#playlist_scope = 'playlist-read-private'
+playlist_scope = 'playlist-read-private'
 library_scope = 'user-library-read'
+follow_scope = 'user-follow-read'
+top_scope = 'user-top-read'
 token = util.prompt_for_user_token(username,
-                                   library_scope,
+                                   top_scope,
                                    SPOTIPY_CLIENT_ID,
                                    SPOTIPY_CLIENT_SECRET,
                                    SPOTIPY_REDIRECT_URI)
@@ -119,6 +121,13 @@ def get_albums():
 
     return url_list
 
+def get_artists_img():
+    url_list = []
+    for item in s.current_user_top_artists(49)['items']:
+        url_list.append(item['images'][0]['url'])
+    
+    return url_list
+
 if __name__ == '__main__':
 
     if len(sys.argv) > 1:
@@ -127,6 +136,5 @@ if __name__ == '__main__':
     else:
         if token:
             print('Token Accepted\n')
-            get_albums()
-
+            get_artists_img()
 

@@ -7,13 +7,6 @@ import os
 
 directory = 'images'
 
-def print_load():
-    for x in range (0,15):
-        b = "||" * x
-        print (b, end="\r")
-        time.sleep(0.1)
-    print('\n')
-
 def download(url, name='none'):
     r = requests.get(url, stream=True)
     if name == 'none':
@@ -21,7 +14,6 @@ def download(url, name='none'):
 
     if r.status_code == 200:
         with open(directory + '/' + name, '+wb') as f:
-            print_load()
             print('Created Image: ' + name)
 
             r.raw.decode_content = True
