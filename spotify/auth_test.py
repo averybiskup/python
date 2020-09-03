@@ -19,9 +19,9 @@ with open('secret.json') as secret:
 username = 'Avery Biskup'
 scope = 'user-read-playback-state'
 #playlist_scope = 'playlist-read-private'
-playlist_scope = 'user-library-read'
+library_scope = 'user-library-read'
 token = util.prompt_for_user_token(username,
-                                   playlist_scope,
+                                   library_scope,
                                    SPOTIPY_CLIENT_ID,
                                    SPOTIPY_CLIENT_SECRET,
                                    SPOTIPY_REDIRECT_URI)
