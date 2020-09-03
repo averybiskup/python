@@ -10,6 +10,7 @@ import sys
 from PIL import Image
 import os
 import math
+import time
 
 # Loops through the albums and downloads each image then stores them in a list
 # Images are stored in the /images folder
@@ -24,17 +25,22 @@ def dl_images():
 
 # This is where the actual image is created
 
-def compile_images():
+def compile_images(filename='final.jpg'):
     img_list = os.listdir('images')
+    print('Creating collage...')
+    time.sleep(0.5)
+    print('Images used: ' + str(len(img_list)))
+    time.sleep(0.5)
 
     images = [Image.open('images/' + i) for i in img_list]
     
     w = 640 * (math.floor(math.sqrt(len(img_list))) + 1)
-    print(w)
     
+    print('Size of image: {} x {}'.format(w, w))
+
     new_im = Image.new('RGB', (w, w), (255, 255, 255))
 
-    offset = 640
+    offset = 640 # All images grabbed from spotify are 640x640
     x_offset = 0
     y_offset = 0
     counter = 0
@@ -49,9 +55,9 @@ def compile_images():
         else:
             counter += 1
 
-    new_im.save('final.jpg')
+    print('File: {}'.format(filename))
+    new_im.save(filename)
     new_im.show()
-compile_images()
 
-
+compile_images('collage.jpg')
 
