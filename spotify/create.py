@@ -16,7 +16,7 @@ import time
 # Loops through the albums and downloads each image then stores them in a list
 # Images are stored in the /images folder
 def dl_images():
-    urls = get_artists_img()
+    urls = get_albums()
 
     i = 0
     for url in urls:
