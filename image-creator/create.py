@@ -1,3 +1,6 @@
+# Gets the quote of the day, and prints it onto a background with random color, optionally sets it as your wall paper
+
+
 from get import request
 from set import set_image
 import textwrap
@@ -33,4 +36,4 @@ def new_image(text, size, bgcolor, textcolor, outfile, set):
 date = str(datetime.datetime.now().date())
 filename = date + '3'
 
-new_image(request(), (2560, 1600), random_color(), "#FFFFFF", filename, True)
+new_image(request(), (2560, 1600), random_color(), "#FFFFFF", filename, False)

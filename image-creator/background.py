@@ -1,3 +1,5 @@
+# creates weird looking images
+
 from PIL import Image, ImageDraw
 from set import set_image
 import random
