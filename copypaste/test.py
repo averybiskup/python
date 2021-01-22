@@ -1,3 +1,6 @@
+# gets the latest string from the clipboard
+
+
 from AppKit import NSPasteboard, NSStringPboardType
 
 pb = NSPasteboard.generalPasteboard()
