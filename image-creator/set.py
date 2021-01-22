@@ -1,3 +1,5 @@
+# sets the file as your background
+
 from appscript import app, mactypes
 
 def set_image(file):

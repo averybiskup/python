@@ -1,3 +1,5 @@
+# attempts to change an image into something that looks like a sketch
+
 from PIL import Image
 import pyautogui
 import time

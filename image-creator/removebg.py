@@ -1,3 +1,6 @@
+# attempts to remove the background by grabbing some color to keep
+
+
 from PIL import Image, ImageMorph, ImagePalette
 import numpy as np
 
