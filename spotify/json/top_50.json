@@ -1,6 +1,126 @@
 {
     "albums": [
         {
+            "name": "Magic Oneohtrix Point Never",
+            "artist": "Oneohtrix Point Never",
+            "img": "https://i.scdn.co/image/ab67616d0000b27330ceed1406b1a6c0fb7b1454",
+            "url": "https://open.spotify.com/album/0oGzSazidykcL5XNTEuS9z"
+        },
+        {
+            "name": "Tripping with Nils Frahm",
+            "artist": "Nils Frahm",
+            "img": "https://i.scdn.co/image/ab67616d0000b27312bc0e7eb2838bf515407ff7",
+            "url": "https://open.spotify.com/album/1NbOBXUF862DsBNF5byxzh"
+        },
+        {
+            "name": "To Be Kind",
+            "artist": "Swans",
+            "img": "https://i.scdn.co/image/ab67616d0000b273a18843206ad1d8a98d1487ef",
+            "url": "https://open.spotify.com/album/4dq7JNcHKrnozzFQg5bpmn"
+        },
+        {
+            "name": "This Is Happening (Deluxe Edition)",
+            "artist": "LCD Soundsystem",
+            "img": "https://i.scdn.co/image/ab67616d0000b273e72b9a6bcb90b33b01e881b7",
+            "url": "https://open.spotify.com/album/75qojmHz1id8sL2LDR5qVz"
+        },
+        {
+            "name": "Ondatr\u00f3pica (Deluxe Version)",
+            "artist": "Ondatr\u00f3pica",
+            "img": "https://i.scdn.co/image/ab67616d0000b2732eb75803a9dff263b95ac6c6",
+            "url": "https://open.spotify.com/album/00ncSDWdPuc4EkTblc0mEH"
+        },
+        {
+            "name": "Mellon Collie And The Infinite Sadness (Deluxe Edition)",
+            "artist": "The Smashing Pumpkins",
+            "img": "https://i.scdn.co/image/ab67616d0000b273431ac6e6f393acf475730ec6",
+            "url": "https://open.spotify.com/album/55RhFRyQFihIyGf61MgcfV"
+        },
+        {
+            "name": "The Dark Side of the Moon",
+            "artist": "Pink Floyd",
+            "img": "https://i.scdn.co/image/ab67616d0000b273f05e5ac32fdd79d100315a20",
+            "url": "https://open.spotify.com/album/4LH4d3cOWNNsVw41Gqt2kv"
+        },
+        {
+            "name": "Axis: Bold As Love",
+            "artist": "Jimi Hendrix",
+            "img": "https://i.scdn.co/image/ab67616d0000b27319dcd95d28b63d10164327f2",
+            "url": "https://open.spotify.com/album/3uFZf8rykoHo7XMIQVYW6r"
+        },
+        {
+            "name": "The Babe Rainbow (AUS)",
+            "artist": "Babe Rainbow",
+            "img": "https://i.scdn.co/image/ab67616d0000b2739ad3303ce684dbf588bfc73a",
+            "url": "https://open.spotify.com/album/4SJjaJoFzSLiRY34F5hl2t"
+        },
+        {
+            "name": "Mystery Flavor",
+            "artist": "Stevie Dinner",
+            "img": "https://i.scdn.co/image/ab67616d0000b2736eecb0e888396154df93bdff",
+            "url": "https://open.spotify.com/album/4XWhLk2Fc2IvWua8ygd5XM"
+        },
+        {
+            "name": "Second Language",
+            "artist": "Minor Science",
+            "img": "https://i.scdn.co/image/ab67616d0000b2737129a4ca9c760188377c6383",
+            "url": "https://open.spotify.com/album/5QlXCWcaODLsQMVwfnnafL"
+        },
+        {
+            "name": "Dissolvi",
+            "artist": "Steve Hauschildt",
+            "img": "https://i.scdn.co/image/ab67616d0000b27356ac6f682a14c02de4ddf4fd",
+            "url": "https://open.spotify.com/album/3SayP9khvJ3VK0w0fJ1mnE"
+        },
+        {
+            "name": "DJ Koze Presents Pampa, Vol. 1",
+            "artist": "DJ Koze",
+            "img": "https://i.scdn.co/image/ab67616d0000b2735dc05eefbc9a9f0ee3656e94",
+            "url": "https://open.spotify.com/album/41nRW0aXlNZbhCikDqtFzV"
+        },
+        {
+            "name": "Traditional Synthesizer Music",
+            "artist": "Venetian Snares",
+            "img": "https://i.scdn.co/image/ab67616d0000b273335c3a2b9ab60b8dd93c33e1",
+            "url": "https://open.spotify.com/album/7nqOcV9Ilnrnuzwvq77xn4"
+        },
+        {
+            "name": "Cosmogramma",
+            "artist": "Flying Lotus",
+            "img": "https://i.scdn.co/image/ab67616d0000b273a9e54a589a171c955c54ed79",
+            "url": "https://open.spotify.com/album/5c7XChrHxYaqykCZLaGM5f"
+        },
+        {
+            "name": "Geogaddi",
+            "artist": "Boards of Canada",
+            "img": "https://i.scdn.co/image/ab67616d0000b273665c8dc1a815f56e6898db78",
+            "url": "https://open.spotify.com/album/7Lou3RDk6NswmbzBMhro24"
+        },
+        {
+            "name": "Body Count",
+            "artist": "Maenad Veyl",
+            "img": "https://i.scdn.co/image/ab67616d0000b273c45fbf5c37763d7a97787dd5",
+            "url": "https://open.spotify.com/album/2dKL5Tf2QbtaCi08f2hBIN"
+        },
+        {
+            "name": "Compro",
+            "artist": "Skee Mask",
+            "img": "https://i.scdn.co/image/ab67616d0000b273b5658daa8f91e2c40d00581b",
+            "url": "https://open.spotify.com/album/3yXIkSJWpudtgF0TZuB16U"
+        },
+        {
+            "name": "Mother Earth's Plantasia",
+            "artist": "Mort Garson",
+            "img": "https://i.scdn.co/image/ab67616d0000b273a941bb5225f09137f035e4f3",
+            "url": "https://open.spotify.com/album/4Pj4zPHuEUPtfacdeTlqUG"
+        },
+        {
+            "name": "The Slow Rush",
+            "artist": "Tame Impala",
+            "img": "https://i.scdn.co/image/ab67616d0000b27358267bd34420a00d5cf83a49",
+            "url": "https://open.spotify.com/album/31qVWUdRrlb8thMvts0yYL"
+        },
+        {
             "name": "It's Immaterial",
             "artist": "Black Marble",
             "img": "https://i.scdn.co/image/ab67616d0000b2735932b30f64046aed66212f46",
@@ -97,12 +217,6 @@
             "url": "https://open.spotify.com/album/4psDRFbIlUM1KUb1omccXo"
         },
         {
-            "name": "Portal 2: Songs to Test By (Collectors Edition)",
-            "artist": "Aperture Science Psychoacoustic Laboratories",
-            "img": "https://i.scdn.co/image/ab67616d0000b27394008f6625cab88b318e3c49",
-            "url": "https://open.spotify.com/album/5l1BFWphq5XiWlpbYUjrhr"
-        },
-        {
             "name": "Foreplay",
             "artist": "Mild Orange",
             "img": "https://i.scdn.co/image/ab67616d0000b2738db9be88181b0684bbe2d5af",
@@ -127,12 +241,6 @@
             "url": "https://open.spotify.com/album/3I6FAUKLydrTWLQo99xbWt"
         },
         {
-            "name": "Dim Mak Greatest Hits 2017: Remixes",
-            "artist": "Various Artists",
-            "img": "https://i.scdn.co/image/ab67616d0000b273409055a4166a4146e7508446",
-            "url": "https://open.spotify.com/album/6OWIyfGpYQsW6fpQ0eEquU"
-        },
-        {
             "name": "Trust In The Lifeforce Of The Deep Mystery",
             "artist": "The Comet Is Coming",
             "img": "https://i.scdn.co/image/ab67616d0000b273ef177fbe4b4fe7c99ea5bb8e",
@@ -143,18 +251,6 @@
             "artist": "Against All Logic",
             "img": "https://i.scdn.co/image/ab67616d0000b27338eb912d9b66a6b54e685a8a",
             "url": "https://open.spotify.com/album/75vFTgDgdfVhbniLoyCNKh"
-        },
-        {
-            "name": "Hard To Earn",
-            "artist": "Gang Starr",
-            "img": "https://i.scdn.co/image/ab67616d0000b273be9fa0b820bcd93392d4047b",
-            "url": "https://open.spotify.com/album/67kl5m0df6Bn0aSe3g5Ea7"
-        },
-        {
-            "name": "RoadKill Overcoat",
-            "artist": "Busdriver",
-            "img": "https://i.scdn.co/image/ab67616d0000b273087832b7c193e717a7742fed",
-            "url": "https://open.spotify.com/album/1odQpJAhBVFVYatdHpljdx"
         },
         {
             "name": "What Kinda Music",
@@ -203,66 +299,6 @@
             "artist": "Kendrick Lamar",
             "img": "https://i.scdn.co/image/ab67616d0000b2738c697f553a46006a5d8886b2",
             "url": "https://open.spotify.com/album/0kL3TYRsSXnu0iJvFO3rud"
-        },
-        {
-            "name": "Red Burns",
-            "artist": "Standing On The Corner",
-            "img": "https://i.scdn.co/image/ab67616d0000b27311f0d300afc35ad03a88d380",
-            "url": "https://open.spotify.com/album/6UZsLBXdL7C5rHRfNLCesA"
-        },
-        {
-            "name": "Buy Muy Drugs",
-            "artist": "Buy Muy Drugs",
-            "img": "https://i.scdn.co/image/ab67616d0000b2738b684f471608e9356cd91907",
-            "url": "https://open.spotify.com/album/0e6pZjzNUd30dDq1SPGrc4"
-        },
-        {
-            "name": "Deadringer: Deluxe",
-            "artist": "RJD2",
-            "img": "https://i.scdn.co/image/ab67616d0000b273482be3c0abad6a3c2bcd2efd",
-            "url": "https://open.spotify.com/album/7DmNwRBDJRUEFUlk3oa2Aj"
-        },
-        {
-            "name": "Who Still Kill Sound?",
-            "artist": "Kid606",
-            "img": "https://i.scdn.co/image/ab67616d0000b2733b1a3c1782b5bb2b84bc665d",
-            "url": "https://open.spotify.com/album/4pmpYB2HZpo19rx6f3EdDw"
-        },
-        {
-            "name": "Lifestyles Of The Laptop Caf\u00e9",
-            "artist": "The Other People Place",
-            "img": "https://i.scdn.co/image/ab67616d0000b27363403d4f1bfbfc1dbe973a11",
-            "url": "https://open.spotify.com/album/4HuzPUi36WvuyGWKUcQEkt"
-        },
-        {
-            "name": "Home Body",
-            "artist": "Dope Body",
-            "img": "https://i.scdn.co/image/ab67616d0000b273391724e5bc7203c69822ad90",
-            "url": "https://open.spotify.com/album/5x5HzoJjt7qNw07woILxZt"
-        },
-        {
-            "name": "SAWAYAMA",
-            "artist": "Rina Sawayama",
-            "img": "https://i.scdn.co/image/ab67616d0000b27366a89b08608325d5a34f31d2",
-            "url": "https://open.spotify.com/album/3stadz88XVpHcXnVYMHc4J"
-        },
-        {
-            "name": "The New Abnormal",
-            "artist": "The Strokes",
-            "img": "https://i.scdn.co/image/ab67616d0000b273bfa99afb5ef0d26d5064b23b",
-            "url": "https://open.spotify.com/album/2xkZV2Hl1Omi8rk2D7t5lN"
-        },
-        {
-            "name": "Cenizas",
-            "artist": "Nicolas Jaar",
-            "img": "https://i.scdn.co/image/ab67616d0000b273b6a8e759a62749b370286006",
-            "url": "https://open.spotify.com/album/4uR6L8Gq7xozMSBpuxIQUp"
-        },
-        {
-            "name": "KIDS SEE GHOSTS",
-            "artist": "KIDS SEE GHOSTS",
-            "img": "https://i.scdn.co/image/ab67616d0000b273013c00ee367dd85396f79c82",
-            "url": "https://open.spotify.com/album/6pwuKxMUkNg673KETsXPUV"
         }
     ]
 }

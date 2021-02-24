@@ -2,7 +2,12 @@ import os
 import json
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+import argparse
+import webbrowser
 
+
+def open_img_url(url):
+    webbrowser.open(url)
 
 # Using spotify credentials to access API and returns the general info about artist
 def get_artist_info(name):
@@ -102,7 +107,6 @@ def get_albums(name):
         new_album['id'] = i['id']
         albums.append(new_album)
     
-    print(albums)
     return albums
 
 #def get_album_tracks(album):
@@ -111,11 +115,18 @@ def get_albums(name):
 def get_img_url(artist, album):
     albums = get_albums(artist)
     for i in albums:
-        if i['name'] == album:
-            print(i)
-            return i
+        if i['name'].lower() == album.lower():
+            return i['cover']
 
 
+def input_for_album_cover():
+    artist = input('Artist: ')
+    album = input('Album: ')
+    
+    url = get_img_url(artist, album)
+    print(url)
+    open_img_url(url)
+    
 # Loading in secret to the OS env in order to access spotify API   
 def load_secret():
     with open('secret.json') as f:
@@ -123,11 +134,26 @@ def load_secret():
     os.environ['SPOTIPY_CLIENT_ID'] = str(data['SPOTIPY_CLIENT_ID'])
     os.environ['SPOTIPY_CLIENT_SECRET'] = data['SPOTIPY_CLIENT_SECRET']
     os.environ['SPOTIPY_REDIRECT_URI'] = data['SPOTIPY_REDIRECT_URI']
-    
+    print('Credentials Correct!\n')
 
-load_secret()
 
 if __name__ == '__main__':
-    get_img_url('Yung Lean', 'Starz')
+    load_secret()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-a', '--album-cover', dest='album', 
+                              action='store_true', 
+                              help='Get album cover by artist, and album name')
+
+    args = parser.parse_args()
+
+    if (args.album):
+        input_for_album_cover()
+    else:
+       print('No args given, -h for help') 
+
+
+
+
 
 
