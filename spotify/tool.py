@@ -4,6 +4,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import argparse
 import webbrowser
+from 'extra/dlimg' import download
 
 
 def open_img_url(url):
@@ -73,9 +74,9 @@ def get_uri(name):
 
             return artist['uri']
         else:
-            return 'Something Went Wrong'
+            return False
     except:
-        return 'Artist Not Found'
+        return False
 
 def get_popularity(name):
     items = get_artist_info(name)
@@ -85,12 +86,17 @@ def get_popularity(name):
             artist = items[0]
             return artist['popularity']
         else:
-            return 'Something Went Wrong'
+            print('Something went wrong')
+            return False
     except:
-        return 'Artist Not Found'
+        print('Artist Not Found')
+        return False
 
 def get_albums(name):
     uri = get_uri(name)
+    if (not uri):
+        print('Bad Name')
+        exit(1)
 
     spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 
@@ -109,21 +115,56 @@ def get_albums(name):
     
     return albums
 
-#def get_album_tracks(album):
    
 # Getting image url
 def get_img_url(artist, album):
     albums = get_albums(artist)
+    if (not albums):
+        return False
+
+    albs = set([a['name'] for a in albums])
+    
     for i in albums:
         if i['name'].lower() == album.lower():
             return i['cover']
 
+    print('Album not found. Choose from this list:')
+
+    index = 0 
+    for a in albs:
+        print("[{0}] {1}".format(index, a))
+        index += 1
+
+    choose = ' '
+    while not isinstance(choose, int):
+        try:
+            choose = int(input("\n>"))
+        except:
+            print('Choose number')
+            continue
+
+    if (isinstance(choose, int)):
+        chosen_album = list(albs)[int(choose)]
+    else:
+        return False
+
+    if (chosen_album):
+        for i in albums:
+            if i['name'].lower() == chosen_album.lower():
+                return i['cover']
+
+    return False
 
 def input_for_album_cover():
     artist = input('Artist: ')
+    get_albums(artist)
     album = input('Album: ')
-    
+
     url = get_img_url(artist, album)
+    
+    if (not url):
+        return False
+
     print(url)
     open_img_url(url)
     
@@ -144,11 +185,21 @@ if __name__ == '__main__':
     parser.add_argument('-a', '--album-cover', dest='album', 
                               action='store_true', 
                               help='Get album cover by artist, and album name')
+    parser.add_argument('-p', '--popularity', dest='pop',
+                              action='store_true',
+                              help='Get the popularity of an artist')
 
     args = parser.parse_args()
 
     if (args.album):
         input_for_album_cover()
+    elif (args.pop):
+        artist = input('Artist: ')
+        p = get_popularity(artist)
+        if p:
+            print('Popularity: ', p)
+        else:
+            print('Artist not found')
     else:
        print('No args given, -h for help') 
 

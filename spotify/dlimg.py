@@ -5,9 +5,7 @@ import sys
 import time
 import os
 
-directory = 'images'
-
-def download(url, name='none'):
+def download(url, directory='/', name='none'):
     r = requests.get(url, stream=True)
     if name == 'none':
         name = url.split('/')[-1]
@@ -22,4 +20,4 @@ def download(url, name='none'):
         print('Unable to access image.')
 
 if __name__ == '__main__':
-    download('no')
+    download('no', d)

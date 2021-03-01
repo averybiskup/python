@@ -10,7 +10,7 @@ import sys
 pp = pprint.PrettyPrinter(indent=4)
 
 # get api info from json file
-with open('secret.json') as secret:
+with open('../secret.json') as secret:
     j = json.load(secret)
     SPOTIPY_CLIENT_ID = j['SPOTIPY_CLIENT_ID']
     SPOTIPY_CLIENT_SECRET = j['SPOTIPY_CLIENT_SECRET']
