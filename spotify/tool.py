@@ -172,6 +172,22 @@ def input_for_album_cover():
 
     print(url)
     
+def artist_info(artist):
+    p = get_popularity(artist)
+    albums = get_albums(artist)
+    followers = get_followers(artist)
+    genres = get_genres(artist)
+    print(artist)
+    print('Popularity: {0}\n====='.format(p))
+    print('Followers: {0}'.format(followers))
+    print('=====\nGenres: ')
+    for genre in genres:
+        print(genre, end=", ")
+    print('\n=====\nAlbums: ')
+    for album in albums:
+        print(' - ' + album['name'])
+
+
 # Loading in secret to the OS env in order to access spotify API   
 def load_secret():
     with open('secret.json') as f:
@@ -192,6 +208,9 @@ if __name__ == '__main__':
     parser.add_argument('-p', '--popularity', dest='pop',
                               action='store_true',
                               help='Get the popularity of an artist')
+    parser.add_argument('-ai', '--artist-info', dest='ai',
+                              action='store_true',
+                              help='Get information about a given artist')
 
     args = parser.parse_args()
 
@@ -204,6 +223,9 @@ if __name__ == '__main__':
             print('Popularity: ', p)
         else:
             print('Artist not found')
+    elif (args.ai):
+        artist = input('Artist: ')
+        artist_info(artist)
     else:
        print('No args given, -h for help') 
 
