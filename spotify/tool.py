@@ -4,7 +4,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import argparse
 import webbrowser
-from 'extra/dlimg' import download
+from dlimg import download
 
 
 def open_img_url(url):
@@ -126,6 +126,7 @@ def get_img_url(artist, album):
     
     for i in albums:
         if i['name'].lower() == album.lower():
+            download(i['cover'], i['name'])
             return i['cover']
 
     print('Album not found. Choose from this list:')
@@ -138,19 +139,23 @@ def get_img_url(artist, album):
     choose = ' '
     while not isinstance(choose, int):
         try:
-            choose = int(input("\n>"))
+            inp = input("\n>")
+            if (inp == 'q'):
+                break
+            choose = int(inp)
         except:
             print('Choose number')
             continue
 
-    if (isinstance(choose, int)):
-        chosen_album = list(albs)[int(choose)]
-    else:
+    if (choose == ' '):
         return False
+
+    chosen_album = list(albs)[choose]
 
     if (chosen_album):
         for i in albums:
             if i['name'].lower() == chosen_album.lower():
+                download(i['cover'], i['name'])
                 return i['cover']
 
     return False
@@ -166,7 +171,6 @@ def input_for_album_cover():
         return False
 
     print(url)
-    open_img_url(url)
     
 # Loading in secret to the OS env in order to access spotify API   
 def load_secret():
