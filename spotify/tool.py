@@ -133,13 +133,13 @@ def get_img_url(artist, album):
 
     index = 0 
     for a in albs:
-        print("[{0}] {1}".format(index, a))
+        print([{0}] {1}.format(index, a))
         index += 1
 
     choose = ' '
     while not isinstance(choose, int):
         try:
-            inp = input("\n>")
+            inp = input(\n>)
             if (inp == 'q'):
                 break
             choose = int(inp)
@@ -182,7 +182,7 @@ def artist_info(artist):
     print('Followers: {0}'.format(followers))
     print('=====\nGenres: ')
     for genre in genres:
-        print(genre, end=", ")
+        print(genre, end=, )
     print('\n=====\nAlbums: ')
     for album in albums:
         print(' - ' + album['name'])
