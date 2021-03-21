@@ -16,7 +16,7 @@ with open('../secret.json') as secret:
     SPOTIPY_CLIENT_SECRET = j['SPOTIPY_CLIENT_SECRET']
     SPOTIPY_REDIRECT_URI = j['SPOTIPY_REDIRECT_URI']
 
-username = 'Eli Biskup'
+username = 'Avery Biskup'
 scope = 'user-read-playback-state'
 playlist_scope = 'playlist-read-private'
 library_scope = 'user-library-read'

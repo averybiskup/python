@@ -2,9 +2,12 @@ import os
 import json
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+import spotipy.util as util
 import argparse
 import webbrowser
 from dlimg import download
+import math
+import figlet_wrapper as f
 
 
 def open_img_url(url):
@@ -133,13 +136,13 @@ def get_img_url(artist, album):
 
     index = 0 
     for a in albs:
-        print([{0}] {1}.format(index, a))
+        print('[{1}] {1}'.format(index, a))
         index += 1
 
     choose = ' '
     while not isinstance(choose, int):
         try:
-            inp = input(\n>)
+            inp = input('\n>')
             if (inp == 'q'):
                 break
             choose = int(inp)
@@ -182,7 +185,7 @@ def artist_info(artist):
     print('Followers: {0}'.format(followers))
     print('=====\nGenres: ')
     for genre in genres:
-        print(genre, end=, )
+        print(genre, end=', ')
     print('\n=====\nAlbums: ')
     for album in albums:
         print(' - ' + album['name'])
@@ -198,6 +201,91 @@ def load_secret():
     print('Credentials Correct!\n')
 
 
+# This requires scope = 'user-read-playback-state'
+def current(to_write=False):
+    username = 'Avery Biskup'
+    scope = 'user-read-playback-state'
+    playlist_scope = 'playlist-read-private'
+    library_scope = 'user-library-read'
+    follow_scope = 'user-follow-read'
+    top_scope = 'user-top-read'
+
+    with open('secret.json') as secret:
+        j = json.load(secret)
+        SPOTIPY_CLIENT_ID = j['SPOTIPY_CLIENT_ID']
+        SPOTIPY_CLIENT_SECRET = j['SPOTIPY_CLIENT_SECRET']
+        SPOTIPY_REDIRECT_URI = j['SPOTIPY_REDIRECT_URI']
+    token = util.prompt_for_user_token(username,
+                                   scope,
+                                   SPOTIPY_CLIENT_ID,
+                                   SPOTIPY_CLIENT_SECRET,
+                                   SPOTIPY_REDIRECT_URI)
+
+    s = spotipy.Spotify(auth=token)
+    os.system('clear')
+
+    p = s.current_playback()
+
+    if not p:
+        print('No song playing')
+        return 0
+
+    device = p['device']['name']
+    volume = p['device']['volume_percent']
+    volume_percentage = math.floor(int(volume)/2)
+    artist = p['item']['artists'][0]['name']
+    album = p['item']['album']['name']
+    track = p['item']['name']
+    progress = p['progress_ms']
+    duration = p['item']['duration_ms']
+    img_url = p['item']['album']['images'][0]['url']
+    link = p['item']['album']['external_urls']['spotify']
+    
+
+    artists = []
+    for i in p['item']['artists']:
+        artists.append(i['name'])
+    
+    if len(artists) > 1:
+        maybe_plural_artist = 'Artists'
+    else:
+        maybe_plural_artist = 'Artist'
+
+    artist_list = ', '.join(artists)
+
+    percentage = math.floor((progress / duration)*50)
+    progress_bar = '[' + ('=' * percentage) + ('-' * (50 - percentage)) + ']'
+
+    duration_min = math.floor((int(duration)/1000)/60)
+    duration_sec = math.floor((int(duration)/1000)%60)
+    time = '{}:{}'.format(duration_min, duration_sec)
+
+    volume_bar = '[' + ('=' * volume_percentage) + ('-' * (50 - volume_percentage)) + ']'
+    
+    print(f.p('Track: ', None, 'yellow') + f.p(track, None, 'purple'))
+    print(f.p('{}: '.format(maybe_plural_artist), None, 'yellow') + f.p(artist_list, None, 'purple'))
+    print(f.p('Album: ', None, 'yellow') + f.p(album, None, 'purple'))
+    print(f.p('{} {}%'.format(volume_bar, volume), None, 'red'))
+    print(f.p('{} {}'.format(progress_bar, time), None, 'cyan'))
+    
+    
+    def write(data, filename='albums.json'):
+        print('writing to file')
+        with open(filename, 'w') as f:
+            json.dump(data, f, indent=4)
+    if to_write:
+
+        with open('albums.json') as album_file:
+            data = json.load(album_file)
+    
+            old = data['albums']
+    
+            new = {'name': album, 'artist': artist, 'img': img_url, 'url': link  }
+    
+            old.append(new)
+        
+        write(data)
+
 if __name__ == '__main__':
     load_secret()
 
@@ -211,6 +299,9 @@ if __name__ == '__main__':
     parser.add_argument('-ai', '--artist-info', dest='ai',
                               action='store_true',
                               help='Get information about a given artist')
+    parser.add_argument('-c', '--current', dest='cur',
+                              action='store_true',
+                              help='Print what you are currently listening to')
 
     args = parser.parse_args()
 
@@ -226,6 +317,8 @@ if __name__ == '__main__':
     elif (args.ai):
         artist = input('Artist: ')
         artist_info(artist)
+    elif (args.cur):
+        current()
     else:
        print('No args given, -h for help') 
 
