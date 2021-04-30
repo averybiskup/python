@@ -173,7 +173,7 @@ def input_for_album_cover():
     if (not url):
         return False
 
-    print(url)
+    print('image url: ', url)
     
 def artist_info(artist):
     p = get_popularity(artist)
