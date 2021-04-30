@@ -136,7 +136,7 @@ def get_img_url(artist, album):
 
     index = 0 
     for a in albs:
-        print('[{1}] {1}'.format(index, a))
+        print('[{0}] {1}'.format(index, a))
         index += 1
 
     choose = ' '
