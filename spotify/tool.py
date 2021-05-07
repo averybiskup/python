@@ -9,6 +9,20 @@ from dlimg import download
 import math
 import figlet_wrapper as f
 
+def write_to_album_file(album_title, artist, img_url, album_url):
+    with open('top_albums.json', 'r+') as f:
+        data = json.load(f)
+        t = { 
+            "name": album_title,
+            "artist": artist,
+            "img": img_url,
+            "url": album_url
+        }
+
+        data['albums'].append(t)
+        f.seek(0)
+        json.dump(data, f, indent=4)
+        f.truncate()
 
 def open_img_url(url):
     webbrowser.open(url)
@@ -37,6 +51,9 @@ def get_background(name):
             return 'Something Went Wrong'
     except:
         return 'No Artist Found'
+
+#def get_album_url(name):
+    
 
 # Function for getting the genres of the artist
 def get_genres(name):
@@ -114,13 +131,14 @@ def get_albums(name):
         new_album['cover'] = i['images'][0]['url']
         new_album['artist'] = i['artists'][0]['name']
         new_album['id'] = i['id']
+        new_album['url'] = i['external_urls']['spotify']
         albums.append(new_album)
     
     return albums
 
    
 # Getting image url
-def get_img_url(artist, album):
+def find_album(artist, album):
     albums = get_albums(artist)
     if (not albums):
         return False
@@ -129,8 +147,7 @@ def get_img_url(artist, album):
     
     for i in albums:
         if i['name'].lower() == album.lower():
-            download(i['cover'], i['name'])
-            return i['cover']
+            return i
 
     print('Album not found. Choose from this list:')
 
@@ -158,8 +175,7 @@ def get_img_url(artist, album):
     if (chosen_album):
         for i in albums:
             if i['name'].lower() == chosen_album.lower():
-                download(i['cover'], i['name'])
-                return i['cover']
+                return i
 
     return False
 
@@ -168,12 +184,13 @@ def input_for_album_cover():
     get_albums(artist)
     album = input('Album: ')
 
-    url = get_img_url(artist, album)
+    album = find_album(artist, album)
+    download(album['cover'], album['name'])
     
-    if (not url):
+    if (not album):
         return False
 
-    print('image url: ', url)
+    print('image url: ', album['cover'])
     
 def artist_info(artist):
     p = get_popularity(artist)
@@ -199,6 +216,13 @@ def load_secret():
     os.environ['SPOTIPY_CLIENT_SECRET'] = data['SPOTIPY_CLIENT_SECRET']
     os.environ['SPOTIPY_REDIRECT_URI'] = data['SPOTIPY_REDIRECT_URI']
     print('Credentials Correct!\n')
+
+def append_album():
+    artist = input('Artist: ')
+    get_albums(artist)
+    album = input('Album: ')
+    album = find_album(artist, album)
+    write_to_album_file(album['name'], album['artist'], album['cover'], album['url'])
 
 
 # This requires scope = 'user-read-playback-state'
@@ -274,7 +298,6 @@ def current(to_write=False):
         with open(filename, 'w') as f:
             json.dump(data, f, indent=4)
     if to_write:
-
         with open('albums.json') as album_file:
             data = json.load(album_file)
     
@@ -302,6 +325,9 @@ if __name__ == '__main__':
     parser.add_argument('-c', '--current', dest='cur',
                               action='store_true',
                               help='Print what you are currently listening to')
+    parser.add_argument('-ap', '--append', dest='app',
+                              action='store_true',
+                              help='Append album to top_albums file')
 
     args = parser.parse_args()
 
@@ -319,6 +345,8 @@ if __name__ == '__main__':
         artist_info(artist)
     elif (args.cur):
         current()
+    elif (args.app):
+        append_album()
     else:
        print('No args given, -h for help') 
 

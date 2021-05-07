@@ -1,0 +1,108 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Figlet	extra/figlet_wrapper.py	/^from pyfiglet import Figlet$/;"	i
+Figlet	figlet_wrapper.py	/^from pyfiglet import Figlet$/;"	i
+Image	extra/create.py	/^from PIL import Image$/;"	i
+Playlist	extra/auth_test.py	/^class Playlist:$/;"	c
+SPOTIPY_CLIENT_ID	extra/auth_test.py	/^    SPOTIPY_CLIENT_ID = j['SPOTIPY_CLIENT_ID']$/;"	v
+SPOTIPY_CLIENT_SECRET	extra/auth_test.py	/^    SPOTIPY_CLIENT_SECRET = j['SPOTIPY_CLIENT_SECRET']$/;"	v
+SPOTIPY_REDIRECT_URI	extra/auth_test.py	/^    SPOTIPY_REDIRECT_URI = j['SPOTIPY_REDIRECT_URI']$/;"	v
+SpotifyClientCredentials	extra/test_get.py	/^from spotipy.oauth2 import SpotifyClientCredentials$/;"	i
+SpotifyClientCredentials	tool.py	/^from spotipy.oauth2 import SpotifyClientCredentials$/;"	i
+__init__	extra/auth_test.py	/^    def __init__(self, id, token):$/;"	m	class:Playlist
+append_album	tool.py	/^def append_album():$/;"	f
+argparse	tool.py	/^import argparse$/;"	i
+artist_info	tool.py	/^def artist_info(artist):$/;"	f
+bc	extra/figlet_wrapper.py	/^bc = {$/;"	v
+bc	figlet_wrapper.py	/^bc = {$/;"	v
+compile_images	extra/create.py	/^def compile_images(filename='final.jpg'):$/;"	f
+current	extra/auth_test.py	/^def current(to_write=False):$/;"	f
+current	tool.py	/^def current(to_write=False):$/;"	f
+data	test.py	/^    data = json.load(f)$/;"	v
+dl_images	extra/create.py	/^def dl_images():$/;"	f
+download	dlimg.py	/^def download(url, name='none'):$/;"	f
+download	extra/create.py	/^from dlimg import download$/;"	i
+download	tool.py	/^from dlimg import download$/;"	i
+export_saved_albums	extra/auth_test.py	/^def export_saved_albums():$/;"	f
+f	extra/auth_test.py	/^import figlet_wrapper as f$/;"	i
+f	tool.py	/^import figlet_wrapper as f$/;"	i
+fc	extra/figlet_wrapper.py	/^fc = {$/;"	v
+fc	figlet_wrapper.py	/^fc = {$/;"	v
+follow_scope	extra/auth_test.py	/^follow_scope = 'user-follow-read'$/;"	v
+get_albums	extra/auth_test.py	/^def get_albums():$/;"	f
+get_albums	extra/create.py	/^from auth_test import get_albums$/;"	i
+get_albums	extra/test_get.py	/^def get_albums(name):$/;"	f
+get_albums	tool.py	/^def get_albums(name):$/;"	f
+get_artist_info	extra/test_get.py	/^def get_artist_info(name):$/;"	f
+get_artist_info	tool.py	/^def get_artist_info(name):$/;"	f
+get_artists_img	extra/auth_test.py	/^def get_artists_img():$/;"	f
+get_artists_img	extra/create.py	/^from auth_test import get_artists_img$/;"	i
+get_background	extra/test_get.py	/^def get_background(name):$/;"	f
+get_background	tool.py	/^def get_background(name):$/;"	f
+get_followers	extra/test_get.py	/^def get_followers(name):$/;"	f
+get_followers	tool.py	/^def get_followers(name):$/;"	f
+get_genres	extra/test_get.py	/^def get_genres(name):$/;"	f
+get_genres	tool.py	/^def get_genres(name):$/;"	f
+get_img_url	extra/test_get.py	/^def get_img_url(artist, album):$/;"	f
+get_img_url	tool.py	/^def get_img_url(artist, album):$/;"	f
+get_my_user_id	extra/auth_test.py	/^def get_my_user_id():$/;"	f
+get_popularity	extra/test_get.py	/^def get_popularity(name):$/;"	f
+get_popularity	tool.py	/^def get_popularity(name):$/;"	f
+get_uri	extra/test_get.py	/^def get_uri(name):$/;"	f
+get_uri	tool.py	/^def get_uri(name):$/;"	f
+input_for_album_cover	tool.py	/^def input_for_album_cover():$/;"	f
+j	extra/auth_test.py	/^    j = json.load(secret)$/;"	v
+json	extra/auth_test.py	/^import json$/;"	i
+json	extra/test_get.py	/^import json$/;"	i
+json	test.py	/^import json$/;"	i
+json	tool.py	/^import json$/;"	i
+library_scope	extra/auth_test.py	/^library_scope = 'user-library-read'$/;"	v
+load_secret	extra/test_get.py	/^def load_secret():$/;"	f
+load_secret	tool.py	/^def load_secret():$/;"	f
+math	extra/auth_test.py	/^import math$/;"	i
+math	extra/create.py	/^import math$/;"	i
+math	tool.py	/^import math$/;"	i
+my_pl_ids	extra/auth_test.py	/^def my_pl_ids():$/;"	f
+name	extra/auth_test.py	/^    def name(self):$/;"	m	class:Playlist
+num_tracks	extra/auth_test.py	/^    def num_tracks(self):$/;"	m	class:Playlist
+open_img_url	tool.py	/^def open_img_url(url):$/;"	f
+os	dlimg.py	/^import os$/;"	i
+os	extra/auth_test.py	/^import os$/;"	i
+os	extra/create.py	/^import os$/;"	i
+os	extra/test_get.py	/^import os$/;"	i
+os	tool.py	/^import os$/;"	i
+p	extra/figlet_wrapper.py	/^def p(text, style='slant', font_color='white', bg_color='black'):$/;"	f
+p	figlet_wrapper.py	/^def p(text, style='slant', font_color='white', bg_color='black'):$/;"	f
+playlist_scope	extra/auth_test.py	/^playlist_scope = 'playlist-read-private'$/;"	v
+popularity	extra/auth_test.py	/^    def popularity(self):$/;"	m	class:Playlist
+pp	extra/auth_test.py	/^pp = pprint.PrettyPrinter(indent=4)$/;"	v
+pprint	extra/auth_test.py	/^import pprint$/;"	i
+requests	dlimg.py	/^import requests$/;"	i
+s	extra/auth_test.py	/^s = spotipy.Spotify(auth=token)$/;"	v
+scope	extra/auth_test.py	/^scope = 'user-read-playback-state'$/;"	v
+shutil	dlimg.py	/^import shutil$/;"	i
+spotipy	extra/auth_test.py	/^import spotipy$/;"	i
+spotipy	extra/auth_test.py	/^import spotipy.util as util$/;"	i
+spotipy	extra/test_get.py	/^import spotipy$/;"	i
+spotipy	tool.py	/^import spotipy$/;"	i
+spotipy	tool.py	/^import spotipy.util as util$/;"	i
+sys	dlimg.py	/^import sys$/;"	i
+sys	extra/auth_test.py	/^import sys$/;"	i
+sys	extra/create.py	/^import sys$/;"	i
+t	test.py	/^    t = { $/;"	v
+time	dlimg.py	/^import time$/;"	i
+time	extra/create.py	/^import time$/;"	i
+token	extra/auth_test.py	/^token = util.prompt_for_user_token(username,$/;"	v
+top_scope	extra/auth_test.py	/^top_scope = 'user-top-read'$/;"	v
+track_list	extra/auth_test.py	/^    def track_list(self):$/;"	m	class:Playlist
+username	extra/auth_test.py	/^username = 'Avery Biskup'$/;"	v
+util	extra/auth_test.py	/^import spotipy.util as util$/;"	i
+util	tool.py	/^import spotipy.util as util$/;"	i
+webbrowser	tool.py	/^import webbrowser$/;"	i
+write	extra/auth_test.py	/^    def write(data, filename='albums.json'):$/;"	f	function:current
+write	tool.py	/^    def write(data, filename='albums.json'):$/;"	f	function:current
+write_to_album_file	tool.py	/^def write_to_album_file(album_title, artist, img_url, album_url):$/;"	f

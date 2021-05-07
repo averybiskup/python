@@ -1,0 +1,28 @@
+{
+    "albums": [
+        {
+            "name": "Random Access Memories",
+            "artist": "Daft Punk",
+            "img": "https://i.scdn.co/image/ab67616d0000b2731d97ca7376f835055f828139",
+            "url": "https://open.spotify.com/album/4m2880jivSbbyEGAKfITCa"
+        },
+        {
+            "name": "Selected Ambient Works 85-92",
+            "artist": "Aphex Twin",
+            "img": "https://i.scdn.co/image/ab67616d0000b27338906032688bb13b135ce19a",
+            "url": "https://open.spotify.com/album/7aNclGRxTysfh6z0d8671k"
+        },
+        {
+            "name": "Drukqs",
+            "artist": "Aphex Twin",
+            "img": "https://i.scdn.co/image/ab67616d0000b27382c83881ac55d0e08d4fc98c",
+            "url": "https://open.spotify.com/album/4W6tJMLh8Tf8oKz53B57rh"
+        },
+        {
+            "name": "Selected Ambient Works Volume II",
+            "artist": "Aphex Twin",
+            "img": "https://i.scdn.co/image/ab67616d0000b273d7dedd5e40da2782615b8fea",
+            "url": "https://open.spotify.com/album/0Zi6aWh3CSIh1oEWfQ8Jfh"
+        }
+    ]
+}
