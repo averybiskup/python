@@ -219,10 +219,15 @@ def load_secret():
 
 def append_album():
     artist = input('Artist: ')
-    get_albums(artist)
-    album = input('Album: ')
-    album = find_album(artist, album)
-    write_to_album_file(album['name'], album['artist'], album['cover'], album['url'])
+    album_choice = input('Album: ')
+    album = find_album(artist, album_choice)
+    if album:
+        write_to_album_file(album['name'], album['artist'], album['cover'], album['url'])
+
+    another = input('Another? (y/n)')
+    if another == 'y':
+        append_album()
+    
 
 
 # This requires scope = 'user-read-playback-state'
