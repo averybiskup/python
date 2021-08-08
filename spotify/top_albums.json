@@ -89,6 +89,42 @@
             "artist": "Fila Brazillia",
             "img": "https://i.scdn.co/image/ab67616d0000b273e692562ba9d32ca63bc23665",
             "url": "https://open.spotify.com/album/1UruvVOmEgsZ8WNv8IxiQF"
+        },
+        {
+            "name": "Too Many Voices",
+            "artist": "Andy Stott",
+            "img": "https://i.scdn.co/image/ab67616d0000b273a4ebb3151247c10029b3c71a",
+            "url": "https://open.spotify.com/album/1k7maweHIX7woy97CEmljv"
+        },
+        {
+            "name": "Cenizas",
+            "artist": "Nicolas Jaar",
+            "img": "https://i.scdn.co/image/ab67616d0000b273b6a8e759a62749b370286006",
+            "url": "https://open.spotify.com/album/4uR6L8Gq7xozMSBpuxIQUp"
+        },
+        {
+            "name": "Circular Forms",
+            "artist": "Abul Mogard",
+            "img": "https://i.scdn.co/image/ab67616d0000b273af1d3eba2213d3de6ef708f3",
+            "url": "https://open.spotify.com/album/4k4UMY26lPgkQnZKQFoZ6c"
+        },
+        {
+            "name": "Lifestyles of the Laptop Caf\u00e9",
+            "artist": "The Other People Place",
+            "img": "https://i.scdn.co/image/ab67616d0000b2732e6a1948c6e1bc720d3746f7",
+            "url": "https://open.spotify.com/album/4k3dU8B0KhSKObIjLS0kwN"
+        },
+        {
+            "name": "The Money Store",
+            "artist": "Death Grips",
+            "img": "https://i.scdn.co/image/ab67616d0000b273b4f8459b0f719f8a97ee1c8c",
+            "url": "https://open.spotify.com/album/1PQDjdBpHPikAodJqjzm6a"
+        },
+        {
+            "name": "DSVII",
+            "artist": "M83",
+            "img": "https://i.scdn.co/image/ab67616d0000b2734cab481eec45b22ec71643d9",
+            "url": "https://open.spotify.com/album/1euK7GgNJmBprlctpGtDC5"
         }
     ]
 }
