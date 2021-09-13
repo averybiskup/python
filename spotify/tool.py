@@ -24,6 +24,20 @@ def write_to_album_file(album_title, artist, img_url, album_url):
         json.dump(data, f, indent=4)
         f.truncate()
 
+def write_to_artists_file(artist, artist_url, img_url):
+    with open('top_artists.json', 'r+') as f:
+        data = json.load(f)
+        t = { 
+            "artist": artist,
+            "artist_url": artist_url,
+            "img_url": img_url
+        }
+
+        data['artists'].append(t)
+        f.seek(0)
+        json.dump(data, f, indent=4)
+        f.truncate()
+
 def open_img_url(url):
     webbrowser.open(url)
 
@@ -45,8 +59,19 @@ def get_background(name):
                 
         if len(items) > 0:
             artist = items[0]
-            print(artist)
             return artist['images'][0]['url']
+        else:
+            return 'Something Went Wrong'
+    except:
+        return 'No Artist Found'
+
+def get_artist_url(name):
+    items = get_artist_info(name)
+
+    try:
+        if len(items) > 0:
+            artist = items[0]
+            return artist['external_urls']['spotify']
         else:
             return 'Something Went Wrong'
     except:
@@ -227,8 +252,17 @@ def append_album():
     another = input('Another? (y/n)')
     if another == 'y':
         append_album()
-    
 
+def append_artist():
+    artist = input('Artist: ')
+
+    url = get_artist_url(artist)
+    bg = get_background(artist)
+
+    write_to_artists_file(artist, url, bg)
+
+    
+    
 
 # This requires scope = 'user-read-playback-state'
 def current(to_write=False):
@@ -333,6 +367,9 @@ if __name__ == '__main__':
     parser.add_argument('-ap', '--append', dest='app',
                               action='store_true',
                               help='Append album to top_albums file')
+    parser.add_argument('-sa', '--save-artist', dest='art',
+                              action='store_true',
+                              help='Append artist to top_artists file')
 
     args = parser.parse_args()
 
@@ -352,6 +389,8 @@ if __name__ == '__main__':
         current()
     elif (args.app):
         append_album()
+    elif (args.art):
+        append_artist()
     else:
        print('No args given, -h for help') 
 
