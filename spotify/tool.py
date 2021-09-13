@@ -263,7 +263,7 @@ def append_artist():
 
     another = input('Another? (y/n)')
     if another == 'y':
-        append_album()
+        append_artist()
 
 # This requires scope = 'user-read-playback-state'
 def current(to_write=False):

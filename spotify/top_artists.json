@@ -9,6 +9,11 @@
             "artist": "Daft Punk",
             "artist_url": "https://open.spotify.com/artist/4tZwfgrHOc3mvqYlEYSvVi",
             "img_url": "https://i.scdn.co/image/ab6761610000e5ebca77d763703a93930c363a39"
+        },
+        {
+            "artist": "Actress",
+            "artist_url": "https://open.spotify.com/artist/3bg5rmICvmA8dmYVAdKGYH",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eba08f2dd7a6b0135db4021f06"
         }
     ]
 }
