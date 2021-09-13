@@ -261,8 +261,9 @@ def append_artist():
 
     write_to_artists_file(artist, url, bg)
 
-    
-    
+    another = input('Another? (y/n)')
+    if another == 'y':
+        append_album()
 
 # This requires scope = 'user-read-playback-state'
 def current(to_write=False):
