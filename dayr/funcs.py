@@ -125,15 +125,26 @@ def request_task():
 
     return 0
 
+def print_date_line(date):
+    pre_string = '+---------------------| {} |'.format(date)
+    print('{}{}+'.format(pre_string, '-' * (80 - len(pre_string) - 1)))
+
+def print_bottom_line():
+    print('+{}+'.format('-' * 78))
+
 def print_tasks(date):
     with open('data.json', 'r') as f:
         data = json.load(f)
         if (date not in data['data'] or len(data['data'][date]) == 0):
             print('Empty Task List')
         else:
+            print_date_line(date)
             for task in data['data'][date]:
                 done = 'X' if task['done'] else ' '
-                print('| [{}] {}{}|'.format(done, task['text'], ' ' * (80 - len(task) - 6)))
+                pre_string = '| [{}] {}'.format(done, task['text'])
+                print('{}{}|'.format(pre_string, ' ' * (80 - len(pre_string) - 1)))
+
+    print_bottom_line()
 
 
 def draw_table(title):
@@ -143,10 +154,10 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--create', dest='create', 
                               action='store_true', 
-                              help='Create a new task')
+                              help='create a new task')
     parser.add_argument('-p', '--print', dest='display', 
                               action='store_true', 
-                              help='Display all tasks')
+                              help='display all tasks')
 
     args = parser.parse_args()
 
@@ -155,7 +166,7 @@ def main():
     elif (args.display):
         print_tasks(get_date())
     else:
-        print('NO ARGUMENTS GIVEN')
+        print('No arguements given... (-h for help)')
 
 
 if __name__ == '__main__':
