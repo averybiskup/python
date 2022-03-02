@@ -24,10 +24,10 @@ def insert(title, amount, _type, location):
   cur.execute(f'''
     INSERT INTO Cach VALUES({get_length()},
                             \"{get_date()}\",
-                            {title},
+                            \"{title}\",
                             {amount},
-                            {_type},
-                            {location})
+                            \"{_type}\",
+                            \"{location}\")
   ''')
 
   con.commit()
@@ -45,19 +45,28 @@ def show():
 
   con.close()
 
+def create_record():
+  title = input('title: ')
+  amount = input('amount: ')
+  _type = input('type: ')
+  location = input('location: ')
+  submit = input('submit (y/n): ')
+
+  if (submit == 'y'):
+      insert(title, amount, _type, location)
+  else:
+    create_record()
+
 def user_input():
   print('What would you like to do?')
   print('0: insert\n1: show')
   _input = input('>')
   
-  if _input = '0':
-    insert_input()
+  if _input == '0':
+    create_record()
   else:
     show()
     
 
-insert('1','2','3','4')
-  
-show()
-
+user_input()
 
