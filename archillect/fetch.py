@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 from appscript import app, mactypes
 import sys
-from PIL import Image
 from random import randrange
 
 URL = "https://archillect.com"
