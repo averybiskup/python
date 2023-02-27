@@ -24,13 +24,15 @@ def write_to_album_file(album_title, artist, img_url, album_url):
         json.dump(data, f, indent=4)
         f.truncate()
 
-def write_to_artists_file(artist, artist_url, img_url):
-    with open('top_artists.json', 'r+') as f:
+def write_to_artists_file(artist, artist_url, img_url, genres, popularity):
+    with open('top_artists2.json', 'r+') as f:
         data = json.load(f)
         t = { 
             "artist": artist,
             "artist_url": artist_url,
-            "img_url": img_url
+            "img_url": img_url,
+            "genres": genres,
+            "popularity": popularity
         }
 
         data['artists'].append(t)
@@ -206,7 +208,7 @@ def find_album(artist, album):
 
 def input_for_album_cover():
     artist = input('Artist: ')
-    get_albums(artist)
+    print(get_albums(artist))
     album = input('Album: ')
 
     album = find_album(artist, album)
@@ -258,12 +260,12 @@ def append_artist():
 
     url = get_artist_url(artist)
     bg = get_background(artist)
+    genres = get_genres(artist)
+    popularity = get_popularity(artist)
 
-    write_to_artists_file(artist, url, bg)
+    write_to_artists_file(artist, url, bg, genres, popularity)
 
-    another = input('Another? (y/n)')
-    if another == 'y':
-        append_artist()
+    append_artist()
 
 # This requires scope = 'user-read-playback-state'
 def current(to_write=False):

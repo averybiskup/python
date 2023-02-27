@@ -14,6 +14,8 @@ import argparse
 +-----------------------------------------------------------------------------+
 """
 
+TABLE_WIDTH = 80
+
 def get_date():
     today = date.today()
     return(today.strftime('%d-%m-%Y'))
@@ -93,7 +95,8 @@ def get_max_task_width():
     return 0
 
 def get_user_day():
-    input_string = 'day [ENTER=today, q=quit]\n> '
+    input_string = '__-{}-{} [ENTER=today, q=quit]\n> '.format(get_month(),
+                                                                   get_year())
     day = input(input_string)
 
     while (not day.isdigit() and day != '' and day != 'q'):
@@ -126,29 +129,78 @@ def request_task():
     return 0
 
 def print_date_line(date):
-    pre_string = '+---------------------| {} |'.format(date)
-    print('{}{}+'.format(pre_string, '-' * (80 - len(pre_string) - 1)))
+    pre_string = '+{}|{}|'.format('-' * 60, date)
+    print('{}{}+'.format(pre_string, '-' * (TABLE_WIDTH - len(pre_string) - 1)))
 
 def print_bottom_line():
-    print('+{}+'.format('-' * 78))
+    print('+{}+\n'.format('-' * (TABLE_WIDTH - 2)))
 
-def print_tasks(date):
+def print_table(date):
     with open('data.json', 'r') as f:
         data = json.load(f)
-        if (date not in data['data'] or len(data['data'][date]) == 0):
-            print('Empty Task List')
+
+        if (date in data['data']):
+            tasks = data['data'][date]
         else:
+            tasks = []
+
+        if (len(tasks) > 0):
             print_date_line(date)
-            for task in data['data'][date]:
+            for task in tasks:
                 done = 'X' if task['done'] else ' '
                 pre_string = '| [{}] {}'.format(done, task['text'])
-                print('{}{}|'.format(pre_string, ' ' * (80 - len(pre_string) - 1)))
+                print('{}{}|'.format(pre_string, ' ' * (TABLE_WIDTH - len(pre_string) - 1)))
+            print_bottom_line()
+            return True
+        else:
+            print_date_line(date)
+            return False
 
-    print_bottom_line()
+
+def print_tasks():
+    day = get_day()
+    month = get_month()
+    year = get_year()
+
+    days_to_print = 7
+
+    # iterating next 7 days
+    for i in range(0, days_to_print):
+        date = '{}-{}-{}'.format(int(day) + i, month, year)
+
+        print_table(date)
 
 
-def draw_table(title):
+def delete_task(date, index):
     return 0
+
+def finish_task():
+    day = get_user_day()
+    date = '{}-{}-{}'.format(day, get_month(), get_year())
+
+    with open('data.json', 'r') as f:
+        data = json.load(f)
+
+        tasks = data['data'][date]
+        
+        for i, task in enumerate(tasks):
+            print('{} | {}'.format(i, task['text']))
+
+        complete = int(input('\n# of completed task\n>'))
+
+        # TODO not replacing done field
+        if (complete <= len(tasks)):
+            data['data'][date][complete]['done'] = 'true'
+        else:
+            print('invalid task #')
+    
+
+
+        
+    
+    
+    
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -158,13 +210,18 @@ def main():
     parser.add_argument('-p', '--print', dest='display', 
                               action='store_true', 
                               help='display all tasks')
+    parser.add_argument('-f', '--finish', dest='finish', 
+                              action='store_true', 
+                              help='mark a task as finished')
 
     args = parser.parse_args()
 
     if (args.create):
         request_task()
     elif (args.display):
-        print_tasks(get_date())
+        print_tasks()
+    elif (args.finish):
+        finish_task()
     else:
         print('No arguements given... (-h for help)')
 

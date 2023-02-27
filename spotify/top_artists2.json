@@ -1,0 +1,553 @@
+{
+    "artists": [
+        {
+            "artist": "Aphex Twin",
+            "artist_url": "https://open.spotify.com/artist/6kBDZFXuLrZgHnvmPu9NsG",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb0ed68984dc1e96340205039e",
+            "genres": [
+                "ambient",
+                "braindance",
+                "electronica",
+                "intelligent dance music",
+                "uk experimental electronic"
+            ],
+            "popularity": 62
+        },
+        {
+            "artist": "Actress",
+            "artist_url": "https://open.spotify.com/artist/3bg5rmICvmA8dmYVAdKGYH",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eba08f2dd7a6b0135db4021f06",
+            "genres": [
+                "ambient",
+                "art pop",
+                "bass music",
+                "deconstructed club",
+                "electronica",
+                "experimental pop",
+                "float house",
+                "fluxwork",
+                "fourth world",
+                "future garage",
+                "hauntology",
+                "intelligent dance music",
+                "microhouse",
+                "outsider house",
+                "wonky"
+            ],
+            "popularity": 40
+        },
+        {
+            "artist": "Against All Logic",
+            "artist_url": "https://open.spotify.com/artist/0ngUeF0DGpYmPec80MqSi1",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb0aab112c87bbb2d36760423a",
+            "genres": [
+                "electronica",
+                "escape room",
+                "experimental hip hop",
+                "float house",
+                "new rave"
+            ],
+            "popularity": 48
+        },
+        {
+            "artist": "alva noto",
+            "artist_url": "https://open.spotify.com/artist/1zrqDVuh55auIRthalFdXp",
+            "img_url": "https://i.scdn.co/image/d836d13cf7949b67c97010805b4a258e747e967f",
+            "genres": [
+                "abstract idm",
+                "ambient",
+                "compositional ambient",
+                "drone",
+                "dub techno",
+                "fourth world",
+                "glitch",
+                "intelligent dance music",
+                "microhouse",
+                "minimal techno"
+            ],
+            "popularity": 45
+        },
+        {
+            "artist": "Andy Stott",
+            "artist_url": "https://open.spotify.com/artist/6BuDxEE5rfuYeyhxQsl53K",
+            "img_url": "https://i.scdn.co/image/07c76d225bf121433c54bf1179937c37d55dce0e",
+            "genres": [
+                "ambient",
+                "art pop",
+                "bass music",
+                "chamber psych",
+                "deconstructed club",
+                "drone",
+                "dub techno",
+                "electronica",
+                "escape room",
+                "experimental pop",
+                "float house",
+                "fluxwork",
+                "fourth world",
+                "future garage",
+                "intelligent dance music",
+                "microhouse",
+                "minimal techno",
+                "new isolationism",
+                "outsider house",
+                "wonky"
+            ],
+            "popularity": 45
+        },
+        {
+            "artist": "Apparat",
+            "artist_url": "https://open.spotify.com/artist/1SImpQO0GbjRgvlwCcCtFo",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb4044c2613ba02384e151c24d",
+            "genres": [
+                "pop punk",
+                "pop rock",
+                "screamo"
+            ],
+            "popularity": 64
+        },
+        {
+            "artist": "Autechre",
+            "artist_url": "https://open.spotify.com/artist/6WH1V41LwGDGmlPUhSZLHO",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5ebcc2ac6a72239bf358e794d47",
+            "genres": [
+                "abstract",
+                "ambient",
+                "ambient techno",
+                "deep idm",
+                "drill and bass",
+                "drone",
+                "electro",
+                "electronica",
+                "experimental",
+                "fourth world",
+                "glitch",
+                "intelligent dance music",
+                "microhouse",
+                "ninja",
+                "outsider house",
+                "techno",
+                "uk experimental electronic"
+            ],
+            "popularity": 44
+        },
+        {
+            "artist": "Bicep",
+            "artist_url": "https://open.spotify.com/artist/73A3bLnfnz5BoQjb4gNCga",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb12052b6d44804a4d7eae5530",
+            "genres": [
+                "ambient house",
+                "electronica"
+            ],
+            "popularity": 63
+        },
+        {
+            "artist": "Bladee",
+            "artist_url": "https://open.spotify.com/artist/2xvtxDNInKDV4AvGmjw6d1",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5ebc7674ecdb1c9c8b45c4d6b8d",
+            "genres": [
+                "glitchcore",
+                "underground hip hop"
+            ],
+            "popularity": 66
+        },
+        {
+            "artist": "Boards of Canada",
+            "artist_url": "https://open.spotify.com/artist/2VAvhf61GgLYmC6C8anyX1",
+            "img_url": "https://i.scdn.co/image/c533bf6f08a42119065d8c2171cdfa8e96720b4c",
+            "genres": [
+                "ambient",
+                "big beat",
+                "electronica",
+                "intelligent dance music",
+                "scottish electronic",
+                "trip hop"
+            ],
+            "popularity": 58
+        },
+        {
+            "artist": "Bogdan Raczynski",
+            "artist_url": "https://open.spotify.com/artist/2bYCvT1nqpbbspU5DZG5nA",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb6ebebed320e71b45868686c1",
+            "genres": [
+                "braindance",
+                "breakcore",
+                "deep idm",
+                "drill and bass",
+                "glitchbreak",
+                "intelligent dance music"
+            ],
+            "popularity": 29
+        },
+        {
+            "artist": "Brazilian Girls",
+            "artist_url": "https://open.spotify.com/artist/6HdYUuBeK3g2MA2wGVCDcn",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb8f9795b1c0f7a067e82feab1",
+            "genres": [
+                "alternative dance",
+                "downtempo",
+                "electronica",
+                "trip hop"
+            ],
+            "popularity": 40
+        },
+        {
+            "artist": "Burial",
+            "artist_url": "https://open.spotify.com/artist/0uNj4RxFjG0iVPlZS753en",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb5f4d461ca280212adc32eb5e",
+            "genres": [
+                "deathcore",
+                "djent",
+                "melodic metalcore",
+                "metalcore",
+                "minneapolis metal",
+                "progressive metalcore"
+            ],
+            "popularity": 51
+        },
+        {
+            "artist": "Clark",
+            "artist_url": "https://open.spotify.com/artist/3BmGtnKgCSGYIUhmivXKWX",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb0835b90a36f1cdbc0e8e2914",
+            "genres": [
+                "dance pop",
+                "neo mellow",
+                "pop",
+                "pop rock",
+                "post-teen pop",
+                "talent show"
+            ],
+            "popularity": 75
+        },
+        {
+            "artist": "Daft Punk",
+            "artist_url": "https://open.spotify.com/artist/4tZwfgrHOc3mvqYlEYSvVi",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5ebca77d763703a93930c363a39",
+            "genres": [
+                "electro",
+                "filter house"
+            ],
+            "popularity": 81
+        },
+        {
+            "artist": "Death Grips",
+            "artist_url": "https://open.spotify.com/artist/5RADpgYLOuS2ZxDq7ggYYH",
+            "img_url": "https://i.scdn.co/image/b4421731b1edda8b8cc56bd74059305e3d3d3baf",
+            "genres": [
+                "escape room",
+                "experimental hip hop",
+                "hip hop",
+                "industrial hip hop"
+            ],
+            "popularity": 60
+        },
+        {
+            "artist": "Domenique Dumont",
+            "artist_url": "https://open.spotify.com/artist/6kNluNBHa4sh5BKIvyiDgf",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb3797063b2ed90e4b88477c2f",
+            "genres": [
+                "art pop",
+                "fluxwork",
+                "fourth world"
+            ],
+            "popularity": 46
+        },
+        {
+            "artist": "Enui",
+            "artist_url": "https://open.spotify.com/artist/0uLnAkNKYtVbCJSviFZnEh",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb346b49b35086eab6b82704a4",
+            "genres": [],
+            "popularity": 46
+        },
+        {
+            "artist": "Fatima Yamaha",
+            "artist_url": "https://open.spotify.com/artist/7eZRt08LoDy0nfIS6OwyMP",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb6c0d04d15e8509bbb9cdeef7",
+            "genres": [
+                "electro house"
+            ],
+            "popularity": 45
+        },
+        {
+            "artist": "Floating Points",
+            "artist_url": "https://open.spotify.com/artist/2AR42Ur9PcchQDtEdwkv4L",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb695ac9b6270e8030cfafaef5",
+            "genres": [
+                "bass music",
+                "electronica",
+                "microhouse"
+            ],
+            "popularity": 53
+        },
+        {
+            "artist": "Flying Lotus",
+            "artist_url": "https://open.spotify.com/artist/29XOeO6KIWxGthejQqn793",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb8d1330444720d6edffa07068",
+            "genres": [
+                "afrofuturism",
+                "alternative hip hop",
+                "electronica",
+                "escape room",
+                "experimental hip hop",
+                "glitch",
+                "glitch hop",
+                "hip hop",
+                "intelligent dance music",
+                "jazztronica",
+                "psychedelic hip hop",
+                "wonky"
+            ],
+            "popularity": 60
+        },
+        {
+            "artist": "Four Tet",
+            "artist_url": "https://open.spotify.com/artist/7Eu1txygG6nJttLHbZdQOh",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb84e29d09b4917bec2700a0d7",
+            "genres": [
+                "alternative dance",
+                "electronica",
+                "folktronica",
+                "intelligent dance music",
+                "new rave"
+            ],
+            "popularity": 62
+        },
+        {
+            "artist": "LFO",
+            "artist_url": "https://open.spotify.com/artist/1FizW0swe8ODtXvEOHXbHX",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb62b23679ff3799bcebc37ae3",
+            "genres": [
+                "boy band"
+            ],
+            "popularity": 47
+        },
+        {
+            "artist": "Luke Vibert",
+            "artist_url": "https://open.spotify.com/artist/0HfxCluo7N2dhr4oRM0wBv",
+            "img_url": "https://i.scdn.co/image/ab6772690000c46c96e1662c218d06650534de0b",
+            "genres": [
+                "acid house",
+                "deep idm",
+                "drill and bass",
+                "electro",
+                "intelligent dance music",
+                "ninja",
+                "trip hop"
+            ],
+            "popularity": 38
+        },
+        {
+            "artist": "Machinedrum",
+            "artist_url": "https://open.spotify.com/artist/06xa1OLBsMQJFXcl2tQkH4",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb9900f8097f6c4795b5e4bf76",
+            "genres": [
+                "bass music",
+                "electronica",
+                "footwork",
+                "future bass",
+                "future garage",
+                "glitch",
+                "glitch hop",
+                "halftime dnb",
+                "intelligent dance music",
+                "minimal dnb",
+                "vapor twitch",
+                "wonky"
+            ],
+            "popularity": 49
+        },
+        {
+            "artist": "Minor Science",
+            "artist_url": "https://open.spotify.com/artist/7xkfvmfvOfMBZmIGKaLtzi",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb7b3e92d4b8dc474c1aeed45c",
+            "genres": [
+                "bass music",
+                "experimental techno"
+            ],
+            "popularity": 27
+        },
+        {
+            "artist": "M83",
+            "artist_url": "https://open.spotify.com/artist/63MQldklfxkjYDoUE4Tppz",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eba1d522250f406d83889a26f3",
+            "genres": [
+                "french shoegaze",
+                "french synthpop",
+                "indietronica",
+                "metropopolis",
+                "neo-synthpop"
+            ],
+            "popularity": 71
+        },
+        {
+            "artist": "Nicolas Jaar",
+            "artist_url": "https://open.spotify.com/artist/5a0etAzO5V26gvlbmHzT9W",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb7370b7eb4261c73101550087",
+            "genres": [
+                "downtempo",
+                "electronica",
+                "microhouse"
+            ],
+            "popularity": 56
+        },
+        {
+            "artist": "Nils Frahm",
+            "artist_url": "https://open.spotify.com/artist/5gqhueRUZEa7VDnQt4HODp",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5ebb0f636a34b03dcbdb6be1039",
+            "genres": [
+                "compositional ambient",
+                "electronica",
+                "neo-classical",
+                "neoclassical darkwave"
+            ],
+            "popularity": 62
+        },
+        {
+            "artist": "Oneohtrix Point Never",
+            "artist_url": "https://open.spotify.com/artist/2wPDbhaGXCqROrVmwDdCrK",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5ebdcb37659a650e2e700c94986",
+            "genres": [
+                "ambient",
+                "art pop",
+                "chillwave",
+                "dream pop",
+                "drone",
+                "electronica",
+                "escape room",
+                "experimental pop",
+                "fluxwork",
+                "fourth world",
+                "freak folk",
+                "hauntology",
+                "intelligent dance music",
+                "microhouse",
+                "outsider house",
+                "vaporwave"
+            ],
+            "popularity": 50
+        },
+        {
+            "artist": "Plaid",
+            "artist_url": "https://open.spotify.com/artist/5akVqMzdZOdbMYbE4vNZWD",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb1f1d58a39bf3a3bf85e59afb",
+            "genres": [
+                "abstract",
+                "deep idm",
+                "drill and bass",
+                "electronica",
+                "intelligent dance music",
+                "microhouse",
+                "ninja"
+            ],
+            "popularity": 42
+        },
+        {
+            "artist": "Squarepusher",
+            "artist_url": "https://open.spotify.com/artist/4mtHSXwIHihO6MWNq5Qoko",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb5dea7fa364975d68b456e7d9",
+            "genres": [
+                "abstract",
+                "bass music",
+                "drill and bass",
+                "electro",
+                "electronica",
+                "intelligent dance music",
+                "microhouse",
+                "ninja",
+                "trip hop"
+            ],
+            "popularity": 46
+        },
+        {
+            "artist": "Sully",
+            "artist_url": "https://open.spotify.com/artist/5L1SdeG9JS8cmL742IYBIy",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb35955a103d09f4b20abd759a",
+            "genres": [
+                "alternative metal"
+            ],
+            "popularity": 43
+        },
+        {
+            "artist": "Tame Impala",
+            "artist_url": "https://open.spotify.com/artist/5INjqkS1o8h1imAzPqGZBb",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb5a2dadeff50fa5c9ad9365c9",
+            "genres": [
+                "australian psych",
+                "neo-psychedelic"
+            ],
+            "popularity": 79
+        },
+        {
+            "artist": "Thom Yorke",
+            "artist_url": "https://open.spotify.com/artist/4CvTDPKA6W06DRfBnZKrau",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5eb3153f6fe26063cfcbfc57677",
+            "genres": [
+                "art pop",
+                "electronica",
+                "glitch pop",
+                "indie rock",
+                "oxford indie"
+            ],
+            "popularity": 61
+        },
+        {
+            "artist": "Venetian Snares",
+            "artist_url": "https://open.spotify.com/artist/7eKIP3IoPoUAZgZuvMM6hf",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5ebf5ea7fe5822b33f0d6f1cf19",
+            "genres": [
+                "braindance",
+                "breakcore",
+                "drill and bass",
+                "hardcore techno",
+                "intelligent dance music"
+            ],
+            "popularity": 36
+        },
+        {
+            "artist": "Yung Lean",
+            "artist_url": "https://open.spotify.com/artist/67lytN32YpUxiSeWlKfHJ3",
+            "img_url": "https://i.scdn.co/image/ab6761610000e5ebb4435845acb9da6f206af96c",
+            "genres": [
+                "psychedelic hip hop",
+                "underground hip hop"
+            ],
+            "popularity": 64
+        },
+        {
+            "artist": "EASYFUN",
+            "artist_url": "https://open.spotify.com/artist/2IRRnJ7AkcLnqMX8jvQqrW",
+            "img_url": "https://i.scdn.co/image/ab67616d0000b2730d54cee6c971cde89ed8fd13",
+            "genres": [
+                "escape room",
+                "hyperpop",
+                "metropopolis",
+                "proto-hyperpop"
+            ],
+            "popularity": 33
+        },
+        {
+            "artist": "EASYFUn",
+            "artist_url": "https://open.spotify.com/artist/2IRRnJ7AkcLnqMX8jvQqrW",
+            "img_url": "https://i.scdn.co/image/ab67616d0000b2730d54cee6c971cde89ed8fd13",
+            "genres": [
+                "escape room",
+                "hyperpop",
+                "metropopolis",
+                "proto-hyperpop"
+            ],
+            "popularity": 33
+        },
+        {
+            "artist": "easyfun",
+            "artist_url": "https://open.spotify.com/artist/2IRRnJ7AkcLnqMX8jvQqrW",
+            "img_url": "https://i.scdn.co/image/ab67616d0000b2730d54cee6c971cde89ed8fd13",
+            "genres": [
+                "escape room",
+                "hyperpop",
+                "metropopolis",
+                "proto-hyperpop"
+            ],
+            "popularity": 33
+        }
+    ]
+}

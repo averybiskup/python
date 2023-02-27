@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from appscript import app, mactypes
 import sys
 from random import randrange
+import os
 
 URL = "https://archillect.com"
 
@@ -17,7 +18,9 @@ def fetch_image(id):
 
     img_src = results['src']
     folder = 'backgrounds/'
+    save_folder = 'save/'
     img_name = f'{folder}{id}.jpg'
+    save_img = f'{save_folder}{id}.jpg'
     
     print(img_name)
 
@@ -26,6 +29,16 @@ def fetch_image(id):
 
     set_image(img_name)
 
+    save = input("Save ?")
+
+    if (save == "y"):
+        with open(save_img, 'wb') as f:
+            f.write(requests.get(img_src).content)
+    if (save == "n"):
+        print("removing: ", img_name)
+        os.remove(img_name)
+
 if __name__ == "__main__":
-    id = randrange(39000)
-    fetch_image(id)
+    while True:
+        id = randrange(39000)
+        fetch_image(id)

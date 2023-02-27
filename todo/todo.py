@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
 import argparse
+import os
 
-PATH = '../../personal/todo.txt'
+PATH = os.path.abspath('/Users/averybiskup/code/personal/todo.txt')
 
 def print_todo():
   with open(PATH, "r") as f:
